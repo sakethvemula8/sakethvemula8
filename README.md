@@ -1,4 +1,4 @@
-Hi, I'm Saketh Raghava
+Hi, I'm Saketh Rao
 
 <!---
 sakethvemula8/sakethvemula8 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
