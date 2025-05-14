@@ -254,3 +254,37 @@ footer {
   color: #0ea5e9;
 }
 
+/* retail sales project */ 
+.project-detail {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  color: #f8fafc;
+}
+
+.project-detail h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #38bdf8;
+}
+
+.project-detail .overview {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.project-detail ul {
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem 0;
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+
