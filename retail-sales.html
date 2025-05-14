@@ -42,5 +42,11 @@
   <footer>
     <p>© 2025 Saketh Vemula. All rights reserved.</p>
   </footer>
+  <script>
+  const userTheme = localStorage.getItem('theme');
+  if (userTheme === 'light') {
+    document.body.classList.add('light-mode');
+  }
+</script>
 </body>
 </html>
