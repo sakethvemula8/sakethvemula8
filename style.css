@@ -78,6 +78,12 @@ body {
   color: var(--accent);
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 /* =============================== */
 /* Hero Section */
 /* =============================== */
