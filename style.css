@@ -335,4 +335,48 @@ footer {
   line-height: 1.5;
 }
 
+/* skills */
+.skills-section {
+  background-color: #1e293b;
+  padding: 5rem 3rem;
+}
+
+.skills-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.skill-category h3 {
+  color: #38bdf8;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-badges span {
+  background-color: #334155;
+  color: #f8fafc;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.skill-badges span:hover {
+  transform: scale(1.05);
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+
 
