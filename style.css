@@ -416,35 +416,92 @@ footer {
 /* Contact */
 /* =============================== */
 .contact-section {
+  padding: 5rem 2rem;
   background-color: var(--bg-color);
-  padding: 5rem 3rem;
   text-align: center;
 }
 
-.contact-text {
-  font-size: 1.1rem;
-  color: var(--muted);
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contact-links {
+.contact-container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 2rem auto 0;
+  text-align: left;
 }
 
-.contact-links a {
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 1.1rem;
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
   font-weight: 600;
-  transition: color 0.3s ease;
+  color: var(--text-color);
 }
 
-.contact-links a:hover {
-  color: var(--accent-hover);
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
 }
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--muted);
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  color: var(--text-color);
+}
+
+.contact-info a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.btn-gradient {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #38bdf8, #ec4899);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, #0ea5e9, #db2777);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
