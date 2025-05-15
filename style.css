@@ -84,6 +84,17 @@ body {
   gap: 2rem;
 }
 
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--nav-bg); /* Same as navbar */
+}
+section {
+  scroll-margin-top: 100px; /* or your navbar height */
+}
+
+
 .hero {
   display: flex;
   align-items: center;
