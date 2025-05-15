@@ -12,6 +12,8 @@
   <header class="site-header">
   <nav class="navbar">
   <div class="logo">Saketh's Data Portfolio</div>
+     <div class="hamburger" id="hamburger">&#9776;</div> <!-- ☰ icon -->
+
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
@@ -243,5 +245,16 @@
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
   });
 </script>
+   
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.innerHTML = navLinks.classList.contains('active') ? '&times;' : '&#9776;';
+  });
+</script>
+
 </body>
 </html>
