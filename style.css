@@ -524,7 +524,7 @@ footer {
   font-weight: 600;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(to right, #38bdf8, #ec4899);
+  background: color: var(--accent);
   color: #fff;
   cursor: pointer;
   transition: background 0.3s ease;
