@@ -209,6 +209,21 @@ footer {
   .hero-content h1 {
     font-size: 2.5rem;
   }
+  
+  .skills-section,
+  .contact-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .skill-item {
+    width: 100%;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
 }
 
 /* =============================== */
