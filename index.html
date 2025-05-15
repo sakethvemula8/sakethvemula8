@@ -71,7 +71,7 @@
         <span>SQL</span><span>Tableau</span><span>Healthcare</span>
       </div>
       <div class="links">
-        <a href="predicting-insurance.html" target="_blank">View Details →</a>
+        <a href="#" onclick="showDetails()">View Details →</a>
       </div>
     </div>
 
@@ -143,6 +143,13 @@
 
   </div>
 </section>
+  <section id="insurance-details" class="project-details" style="display: none; padding: 2rem;">
+  <h2>Predicting Insurance Costs with Linear Regression</h2>
+  <p>This project explores how individual attributes (like age, BMI, and smoking status) impact insurance charges. Using Python and regression modeling, I derived insights that could help insurers price plans more fairly.</p>
+  <p>Tools used: Python, Pandas, Seaborn, Scikit-learn</p>
+  <button onclick="closeDetails()">← Back to Projects</button>
+</section>
+
 
 
  <section id="skills" class="skills-section">
@@ -245,6 +252,19 @@
     toggleBtn.textContent = isLight ? '🌞' : '🌙';
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
   });
+</script>
+  <script>
+  function showDetails() {
+    document.querySelector(".projects-section").style.display = "none";
+    document.querySelector("#insurance-details").style.display = "block";
+    window.scrollTo(0, 0);
+  }
+
+  function closeDetails() {
+    document.querySelector(".projects-section").style.display = "block";
+    document.querySelector("#insurance-details").style.display = "none";
+    window.scrollTo(0, document.querySelector("#projects").offsetTop);
+  }
 </script>
 </body>
 </html>
