@@ -371,45 +371,56 @@ footer {
 /* Skills */
 /* =============================== */
 .skills-section {
-  background-color: var(--nav-bg);
-  padding: 5rem 3rem;
+  background-color: var(--bg-color);
+  padding: 5rem 2rem;
+  text-align: center;
 }
 
-.skills-container {
-  max-width: 1000px;
+.skills-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.skills-grid.clean-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  max-width: 1100px;
   margin: 0 auto;
+  text-align: left;
+}
+
+.skill-item {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  align-items: flex-start;
 }
 
-.skill-category h3 {
-  color: var(--accent);
+.skill-item img {
+  height: 40px;
   margin-bottom: 1rem;
-  font-size: 1.4rem;
 }
 
-.skill-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.skill-badges span {
-  background-color: var(--border-color);
+.skill-item h3 {
+  font-size: 1.1rem;
   color: var(--text-color);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease;
+  margin-bottom: 0.6rem;
 }
 
-.skill-badges span:hover {
-  transform: scale(1.05);
-  background-color: var(--accent);
-  color: var(--bg-color);
+.skill-item p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.skill-item {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  transition: background-color 0.3s ease;
 }
 
 /* =============================== */
@@ -459,7 +470,7 @@ footer {
   color: var(--muted);
 }
 
-.contact-info {
+/* .contact-info {
   flex: 1;
   min-width: 250px;
 }
@@ -481,21 +492,21 @@ footer {
   margin-top: 1rem;
   color: var(--accent);
   font-size: 1.5rem;
-}
+} */
 
 .btn-gradient {
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(to right, #38bdf8, #ec4899);
+  background: linear-gradient(to right, #38bdf8, #6366f1);
   color: #fff;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(to right, #0ea5e9, #db2777);
+  background: linear-gradient(to right, #0ea5e9, #4f46e5);
 }
 
 @media (max-width: 768px) {
