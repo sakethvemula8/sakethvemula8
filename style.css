@@ -371,7 +371,7 @@ footer {
 /* Skills */
 /* =============================== */
 .skills-section {
-  background-color: var(--bg-color);
+  background-color: #ffffff;
   padding: 5rem 2rem;
   text-align: center;
 }
@@ -379,50 +379,43 @@ footer {
 .skills-intro {
   max-width: 800px;
   margin: 0 auto 3rem;
-  color: var(--muted);
   font-size: 1.05rem;
+  color: #475569;
   line-height: 1.6;
 }
 
-.skills-grid {
+.skills-grid.clean-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
+  gap: 3rem;
   max-width: 1100px;
   margin: 0 auto;
+  text-align: left;
 }
 
-.skill-card {
-  background-color: var(--card-bg);
-  padding: 2rem;
-  border-radius: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  border: 1px solid var(--border-color);
-  transition: transform 0.3s ease;
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.skill-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent);
-}
-
-.skill-card img {
-  height: 50px;
+.skill-item img {
+  height: 40px;
   margin-bottom: 1rem;
 }
 
-.skill-card h3 {
-  color: var(--accent);
-  margin-bottom: 0.8rem;
-  font-size: 1.2rem;
+.skill-item h3 {
+  font-size: 1.1rem;
+  color: #1e293b;
+  margin-bottom: 0.6rem;
 }
 
-.skill-card p {
+.skill-item p {
   font-size: 0.95rem;
-  color: var(--muted);
+  color: #475569;
   line-height: 1.5;
 }
+
 
 
 /* =============================== */
