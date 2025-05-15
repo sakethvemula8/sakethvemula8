@@ -13,6 +13,12 @@
   <nav class="navbar">
   <div class="logo">Saketh's Data Portfolio</div>
   <div class="nav-right">
+    <!-- Hamburger (visible on mobile) -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -243,5 +249,14 @@
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
   });
 </script>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
