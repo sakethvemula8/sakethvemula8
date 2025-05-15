@@ -406,6 +406,9 @@ footer {
 /* =============================== */
 /* Skills */
 /* =============================== */
+/* =============================== */
+/* Skills */
+/* =============================== */
 .skills-section {
   background-color: var(--bg-color);
   padding: 5rem 2rem;
@@ -436,6 +439,10 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  transition: background-color 0.3s ease;
 }
 
 .skill-item img {
@@ -453,13 +460,6 @@ footer {
   font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.5;
-}
-
-.skill-item {
-  background-color: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  transition: background-color 0.3s ease;
 }
 
 /* =============================== */
@@ -481,6 +481,7 @@ footer {
   margin: 2rem auto 0;
   padding: 0 1rem;
   text-align: left;
+  box-sizing: border-box;
 }
 
 .contact-form {
@@ -511,30 +512,9 @@ footer {
   color: var(--muted);
 }
 
-/* .contact-info {
-  flex: 1;
-  min-width: 250px;
-}
-
-.contact-info h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--accent);
-}
-
-.contact-info p {
-  margin: 0.5rem 0;
-  color: var(--text-color);
-}
-
-.contact-info a {
-  display: inline-block;
-  margin-top: 1rem;
-  color: var(--accent);
-  font-size: 1.5rem;
-} */
-
+/* =============================== */
+/* Gradient Button */
+/* =============================== */
 .btn-gradient {
   padding: 0.75rem 1.5rem;
   font-weight: 600;
@@ -550,9 +530,24 @@ footer {
   background: linear-gradient(to right, #0ea5e9, #4f46e5);
 }
 
+/* =============================== */
+/* Responsive Fixes */
+/* =============================== */
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
     align-items: stretch;
   }
+
+  .skills-section,
+  .contact-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .skill-item,
+  .contact-form {
+    width: 100%;
+  }
 }
+
