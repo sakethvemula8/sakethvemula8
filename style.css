@@ -35,20 +35,12 @@ html {
   box-sizing: border-box;
 }
 
-/* body {
+body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
-} */
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-}
-
+} 
 
 /* =============================== */
 /* Navigation */
