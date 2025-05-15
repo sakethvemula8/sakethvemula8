@@ -390,8 +390,11 @@ footer {
 /* =============================== */
 /* Skills */
 /* =============================== */
+/* =============================== */
+/* Skills (Theme-Aware) */
+/* =============================== */
 .skills-section {
-  background-color: #ffffff;
+  background-color: var(--bg-color);
   padding: 5rem 2rem;
   text-align: center;
 }
@@ -400,7 +403,7 @@ footer {
   max-width: 800px;
   margin: 0 auto 3rem;
   font-size: 1.05rem;
-  color: #475569;
+  color: var(--muted);
   line-height: 1.6;
 }
 
@@ -426,14 +429,21 @@ footer {
 
 .skill-item h3 {
   font-size: 1.1rem;
-  color: #1e293b;
+  color: var(--text-color);
   margin-bottom: 0.6rem;
 }
 
 .skill-item p {
   font-size: 0.95rem;
-  color: #475569;
+  color: var(--muted);
   line-height: 1.5;
+}
+
+.skill-item {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  transition: background-color 0.3s ease;
 }
 
 
