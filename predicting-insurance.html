@@ -16,28 +16,29 @@
     </nav>
   </header>
 
-  <section class="project-detail">
-    <h1>Retail Sales Forecasting</h1>
-    <p class="overview">
-      This project focuses on predicting weekly sales across retail locations using XGBoost and feature-engineered time-series data.
-    </p>
+  <section class="project-details">
+  <h2>Predicting Insurance Costs with Linear Regression</h2>
+  <p><strong>Business Problem:</strong> Health insurance providers need accurate cost predictions to set fair premiums. With rising healthcare costs, poor estimations can lead to financial losses or unfair pricing for customers.</p>
 
-    <img src="assets/retail-sales-chart.png" alt="Retail sales model output" class="project-image"/>
+  <p><strong>Key Insights:</strong></p>
+  <ul>
+    <li>Insurance charges were highly skewed — <em>log transformation</em> was applied for normalization.</li>
+    <li><strong>Top predictors:</strong> age, BMI, and smoking status (especially smokers with higher costs).</li>
+    <li>Minimal impact from gender or region.</li>
+  </ul>
 
-    <h3>🔧 Tools Used:</h3>
-    <ul>
-      <li>Python (Pandas, Scikit-learn, XGBoost)</li>
-      <li>Power BI (visualization)</li>
-      <li>GitHub for version control</li>
-    </ul>
+  <p><strong>Analytical Approach:</strong></p>
+  <ul>
+    <li>Performed EDA with visualizations like histograms, boxplots, and correlation matrices.</li>
+    <li>Selected key features and built a linear regression model on log-transformed charges.</li>
+    <li>Evaluated using R² and MSE to check accuracy and variance explanation.</li>
+  </ul>
 
-    <h3>📈 Impact:</h3>
-    <ul>
-      <li>Increased sales prediction accuracy by 18%</li>
-      <li>Enabled better inventory planning across 5 regional branches</li>
-      <li>Automated monthly sales reports</li>
-    </ul>
-  </section>
+  <p><strong>Solution & Impact:</strong> Developed a predictive model that helps insurance firms price policies based on customer characteristics like age, BMI, and smoking status. This leads to smarter risk assessment and premium setting.</p>
+
+  <p><strong>Tools:</strong> Python, Pandas, Scikit-learn, Matplotlib, Seaborn</p>
+</section>
+
 
   <footer>
     <p>© 2025 Saketh Vemula. All rights reserved.</p>
