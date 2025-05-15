@@ -131,6 +131,27 @@ body {
 .btn:hover {
   background-color: var(--accent-hover);
 }
+
+.social-icons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  color: var(--accent);
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--accent-hover);
+  transform: scale(1.15);
+}
+
 .wave {
   display: inline-block;
   animation: wave 2s infinite;
