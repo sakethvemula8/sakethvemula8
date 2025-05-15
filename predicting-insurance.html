@@ -16,28 +16,43 @@
     </nav>
   </header>
 
-  <section class="project-details">
-  <h2>Predicting Insurance Costs with Linear Regression</h2>
-  <p><strong>Business Problem:</strong> Health insurance providers need accurate cost predictions to set fair premiums. With rising healthcare costs, poor estimations can lead to financial losses or unfair pricing for customers.</p>
+  <section class="project-detail">
+  <h1>📌 Predicting Insurance Costs with Linear Regression</h1>
+  <p class="overview">
+    Built a predictive model to estimate individual medical insurance charges based on demographics and lifestyle factors, using EDA and regression modeling.
+  </p>
 
-  <p><strong>Key Insights:</strong></p>
+  <h2>📈 Business Problem</h2>
+  <p>
+    Health insurance providers need accurate cost predictions to set fair premiums. Over- or underestimating costs leads to financial losses or dissatisfied customers.
+  </p>
+
+  <h2>🔍 Key Insights</h2>
   <ul>
-    <li>Insurance charges were highly skewed — <em>log transformation</em> was applied for normalization.</li>
-    <li><strong>Top predictors:</strong> age, BMI, and smoking status (especially smokers with higher costs).</li>
-    <li>Minimal impact from gender or region.</li>
+    <li>Insurance charges were highly skewed — applied log transformation to normalize.</li>
+    <li><strong>Top predictors:</strong> age, BMI, and smoking status.</li>
+    <li>Gender and region showed minimal predictive power.</li>
   </ul>
 
-  <p><strong>Analytical Approach:</strong></p>
+  <h2>🧠 Analytical Approach</h2>
   <ul>
-    <li>Performed EDA with visualizations like histograms, boxplots, and correlation matrices.</li>
-    <li>Selected key features and built a linear regression model on log-transformed charges.</li>
-    <li>Evaluated using R² and MSE to check accuracy and variance explanation.</li>
+    <li>Performed EDA with histograms, boxplots, and a correlation heatmap.</li>
+    <li>Created new feature <code>log_charges</code> to stabilize variance.</li>
+    <li>Built a linear regression model and evaluated performance with R² and MSE.</li>
   </ul>
 
-  <p><strong>Solution & Impact:</strong> Developed a predictive model that helps insurance firms price policies based on customer characteristics like age, BMI, and smoking status. This leads to smarter risk assessment and premium setting.</p>
+  <h2>✅ Solution & Impact</h2>
+  <p>
+    Enabled fairer and more data-driven insurance pricing by predicting costs based on key health and demographic variables. Supports strategic underwriting and pricing.
+  </p>
 
-  <p><strong>Tools:</strong> Python, Pandas, Scikit-learn, Matplotlib, Seaborn</p>
+  <h2>🛠️ Tools & Technologies</h2>
+  <p>Python, Pandas, Scikit-learn, Matplotlib, Seaborn</p>
+
+  <img src="images/insurance_heatmap.png" alt="Correlation heatmap" class="project-image">
+  <img src="images/log_charges_histogram.png" alt="Log charges histogram" class="project-image">
 </section>
+
 
 
   <footer>
