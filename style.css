@@ -574,8 +574,12 @@ footer {
 }
 
 .nav-right {
-  flex-direction: row-reverse;
-  gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  position: relative;
+}
+
 }
 
 }
