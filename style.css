@@ -556,16 +556,17 @@ footer {
 }
 
 .nav-links {
+  display: none;
   position: absolute;
-  top: 70px;
+  top: 60px;
   left: 0;
   right: 0;
   background-color: var(--nav-bg);
   flex-direction: column;
-  align-items: center;
   gap: 1.5rem;
   padding: 2rem 0;
-  display: none;
+  text-align: center;
+  z-index: 999;
 }
 
 .nav-links.active {
