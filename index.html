@@ -254,9 +254,16 @@
 
   hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
-    hamburger.innerHTML = navLinks.classList.contains('active') ? '&times;' : '&#9776;';
+    
+    // Toggle hamburger icon between ☰ and ✖
+    if (navLinks.classList.contains('active')) {
+      hamburger.innerHTML = '&times;'; // ✖
+    } else {
+      hamburger.innerHTML = '&#9776;'; // ☰
+    }
   });
 </script>
+
 
 </body>
 </html>
