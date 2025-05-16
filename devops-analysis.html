@@ -17,7 +17,7 @@
   </header>
 
   <section class="project-detail">
-  <h1>DevOps Deployment Analysis on Azure and AWS</h1>
+  <h1>DevOps Deployment Analysis on Azure/AWS</h1>
   <p class="overview">
     This project explores how DevOps deployments perform across AWS and Azure, and how data can help uncover ways to make them faster and more efficient. 
     As a data analyst, I focused on identifying patterns, building predictive models, and translating technical results into insights that DevOps and cloud 
@@ -27,23 +27,35 @@
   <h2>What Problem Are We Solving?</h2>
   <p>
     As cloud adoption accelerates, organizations are investing heavily in DevOps practices to enable continuous delivery and scale operations. However, even
-    with modern CI/CD pipelines, businesses often face: <br>
-      • Long and unpredictable deployment times <br> 
-      • Excessive resource consumption, inflating cloud costs <br> 
-      • Inconsistent performance across cloud providers <br> 
+    with modern CI/CD pipelines, businesses often face: 
+    <ul>
+      <li>Long and unpredictable deployment times.</li> 
+      <li>Excessive resource consumption, inflating cloud costs.</li>
+      <li>Inconsistent performance across cloud providers.</li> 
+    </ul>
+    The central question: <br>
+    <strong>How can we optimize DevOps efficiency and reliability across different cloud platforms like AWS and Azure?</strong>
   </p>
 
-  <h2>🔍 Key Insights</h2>
-  <ul>
-    <li>Insurance charges were highly skewed — applied log transformation to normalize.</li>
-    <li><strong>Top predictors:</strong> age, BMI, and smoking status.</li>
-    <li>Gender and region showed minimal predictive power.</li>
-  </ul>
+  <h2>The Solution: A Data-Driven Efficiency Analysis</h2>
+    <p>To solve this, I analyzed 50,000+ deployment records across AWS and Azure using Python-based data science workflows. The goal
+      was to identify performance bottlenecks, uncover hidden patterns, and recommend optimization strategies. <br>
+      Key steps included:
+      <ul>
+        <li><strong>EDA (Exploratory Data Analysis)</strong> to identify patterns in deployment time, resource usage, scalability, and reliability.</li>
+        <li><strong>Correlation Analysis</strong> to quantify relationships between KPIs (e.g., time vs. resource usage).</li>
+        <li><strong>Regression Models</strong> to predict deployment durations using cloud-specific features.</li>
+        <li><strong>Clustering Algorithms (K-Means, Hierarchical)</strong> to group similar deployment scenarios for targeted improvements.</li>
+      </ul>
+    </p>
+    <img src="images/insurance_heatmap.png" alt="Correlation heatmap" class="project-image"> 
 
-  <h2>🧠 Analytical Approach</h2>
+  <h2>Business Questions Answered:</h2>
   <ul>
-    <li>Performed EDA with histograms, boxplots, and a correlation heatmap.</li>
-    <li>Created new feature <code>log_charges</code> to stabilize variance.</li>
+    <li><strong>Which platform is more scalable or reliable for large-scale deployments?</strong></li> <br>
+                <p><i></i>Found that AWS had higher scalability scores, while Azure performed better on reliability metrics.</i></p>
+    <li><strong>What’s the relationship between deployment time and resource usage?</li> <br>
+                <p><i></i>A 0.99 correlation suggests faster deployments = lower cloud costs.</i></p>
     <li>Built a linear regression model and evaluated performance with R² and MSE.</li>
   </ul>
 
