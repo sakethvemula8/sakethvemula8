@@ -54,13 +54,16 @@
     <li>Found that most deployments took 20–80 hours and used similar ranges of cloud resources</li>
   </ul>
 
+    <img src="statisticalanalysis.png" alt="Correlation between deployment metrics" class="project-image"/>
+    
+
 
   <h4>2. Correlation Analysis</h4>
   <ul>
     <li>Uncovered a 0.99 correlation between deployment time and resource usage — meaning time is a direct cost driver</li>
     <li>Noted strong positive correlations between DevOps Efficiency Score and AWS Scalability (0.72), Azure Reliability (0.71)</li>
   </ul>
-<img src="images/devops_correlation_heatmap.png" alt="Correlation between deployment metrics" class="project-image"/>
+<img src="images/correlation.png" alt="Correlation between deployment metrics" class="project-image"/>
     
   <h4>3. Regression Modeling</h4>
   <ul>
@@ -80,13 +83,13 @@
   <p><em>Clustering gave far clearer insights than regression. It helped segment deployments into actionable groups for optimization.</em></p> 
 
     <!-- Screenshot: Deployment Time Histogram -->
-    <img src="images/deployment_time_distribution.png" alt="Deployment time distribution" class="project-image"/>
+    <img src="images/deployment_histogram.png" alt="Deployment time distribution" class="project-image"/>
 
     <!-- Screenshot: Resource Usage Histogram -->
-    <img src="images/resource_usage_distribution.png" alt="Resource usage distribution" class="project-image"/>
+    <img src="images/resource_histogram.png" alt="Resource usage distribution" class="project-image"/>
 
     <!-- Screenshot: Deployment Time vs Resource Usage -->
-    <img src="images/time_vs_resource_usage.png" alt="Deployment time vs resource usage" class="project-image"/>
+    <img src="images/deployvsresource.png" alt="Deployment time vs resource usage" class="project-image"/>
 
   <h3>What Business Questions Did This Project Answer?</h3>
   <ul>
@@ -97,13 +100,13 @@
   </ul>
 
     <!-- Screenshot: Clustering Output (K-Means) -->
-    <img src="images/kmeans_clusters.png" alt="Deployment Clustering - K-Means" class="project-image"/>
+    <img src="images/kmeans.png" alt="Deployment Clustering - K-Means" class="project-image"/>
 
     <!-- Screenshot: Hierarchical Clustering -->
-    <img src="images/hierarchical_clustering.png" alt="Hierarchical clustering result" class="project-image"/>
+    <img src="images/hierarchical.png" alt="Hierarchical clustering result" class="project-image"/>
 
     <!-- Screenshot: Regression Model Comparison -->
-    <img src="images/regression_model_comparison.png" alt="Regression model comparison" class="project-image"/>
+    <img src="images/linear.png" alt="Regression model comparison" class="project-image"/>
 
   <h3>Key Takeaways</h3>
   <ul>
