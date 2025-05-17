@@ -9,7 +9,7 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo">Saketh's Data Portfolio</div>
+      <div class="logo">Saketh's Portfolio</div>
       <ul class="nav-links">
         <li><a href="index.html#projects">← Back to Projects</a></li>
       </ul>
@@ -17,43 +17,137 @@
   </header>
 
   <section class="project-detail">
-  <h1>📌 Predicting Insurance Costs with Linear Regression</h1>
+  <h1>Predicting Insurance Costs: Linear Regression</h1>
   <p class="overview">
-    Built a predictive model to estimate individual medical insurance charges based on demographics and lifestyle factors, using EDA and regression modeling.
+    Built a predictive model to estimate individual medical insurance charges based on demographics and lifestyle factors, using EDA 
+    and regression modeling.
   </p>
 
-  <h2>📈 Business Problem</h2>
-  <p>
-    Health insurance providers need accurate cost predictions to set fair premiums. Over- or underestimating costs leads to financial losses or dissatisfied customers.
-  </p>
+<h3>The Problem: What Did I Solve?</h3>
+  <p>In the healthcare insurance industry, accurately pricing premiums is crucial. Overpricing may drive away potential customers,
+    underpricing can harm the company's bottom line. The goal of this project was to explore how individual demographics and habits 
+    affect medical insurance charges, and whether we can predict future charges using these features. <br> <br>
 
-  <h2>🔍 Key Insights</h2>
+    But there's a twist: the original "charges" data is highly skewed, and not all features contribute equally. This project goes beyond 
+    building a model, it uncovers hidden relationships and tells a story about how lifestyle choices (like smoking) can impact costs.</p>
+    <br> <br>
+    <p><em>Dataset preview</em></p>
+
+    <img src="images/insurance_head.png" alt="Insurance Head" class="project-image"/>
+
+  <h3>Who Is This For?</h3>
+  <p>This project is built for:</p>
   <ul>
-    <li>Insurance charges were highly skewed — applied log transformation to normalize.</li>
-    <li><strong>Top predictors:</strong> age, BMI, and smoking status.</li>
-    <li>Gender and region showed minimal predictive power.</li>
+    <li>Insurance Analysts: to support underwriting and pricing decisions.</li>
+    <li>Healthcare Policy Strategists: to identify high-risk populations.</li>
+    <li>Machine Learning Learners: to understand the value of EDA and preprocessing.</li>
+  </ul>
+  <p>It’s also a portfolio piece that shows how I think as a data analyst, how I explore a messy dataset, decide what's worth modeling,
+    and explain results clearly.</p>
+    <br><br>
+    
+  <h3>My Approach- Step by Step</h3>
+  <h4>1. Data Exploration (EDA)</h4>
+  <p>First, I performed an initial inspection of the dataset, checking for:</p>
+  <ul>
+    <li>Data types</li>
+    <li>Null values (none found)</li>
+    <li>Skewness in the <code>charges</code> variable</li>
+  </ul>
+<br> <br>
+    <p><em>Histogram of <code>charges</code>: Below screenshot shows the heavy right skew, motivating a log transformation.</em></p>
+    <img src="images/charges_histogram.png" alt="Charges Histogram" class="project-image"/>
+    
+<br><br>
+    <p><em>Histogram of <code>log_charges</code>:To address this skew, I applied a log2 transformation on <code>charges</code>, making 
+      the variable better suited for regression.</em></p>
+    <img src="images/log_charges_histogram.png" alt="Log Charges Histogram" class="project-image"/>
+    
+  <h4>2. Feature Selection & Visualization</h4>
+    <p>Good data analysts know that how you shape your data affects what it can reveal.</p>
+    <p>Using correlation analysis and visual tools like pairplots and boxplots, I narrowed the features down to:</p>
+  <ul>
+    <li><code>age</code></li>
+    <li><code>bmi</code></li>
+    <li><code>smoker</code></li>
+  </ul>
+    <p>This simplification helps algorithms process the data more effectively and enables clear business interpretation: being 
+      a smoker adds $X to expected costs.</p>
+<br> <br>
+    <p><em>Heatmap of correlations: Demonstrates which variables most influence charges.</em></p>
+    <img src="images/charges_histogram.png" alt="Charges Histogram" class="project-image"/>
+    
+<br><br>
+    <p><em>Boxplots of <code>log_charges</code> by gender, smoker, and region</em>T</p>
+    <img src="images/log_charges_histogram.png" alt="Log Charges Histogram" class="project-image"/>
+    
+  <h4>3. Data Transformation</h4>
+  <p>I engineered a new feature:</p>
+  <p><code>insurance["is_smoker"] = (insurance["smoker"] == "yes")</code></p>
+  <p>This binary transformation simplifies model interpretation and increases accuracy.</p> <br> <br>
+
+    <img src="images/transformed_data.png" alt="Transformed Data" class="project-image"/>
+
+  <h4>4. Model Building</h4>
+  <ul>
+    <li>K-Means (4 clusters): Identified patterns such as high efficiency + low usage and low efficiency + high cost</li>
+    <li>Hierarchical Clustering validated K-Means structure</li>
+    <li>DBSCAN didn’t perform well due to uniform density in the data</li>
+  </ul>
+  <p><em>Clustering gave far clearer insights than regression. It helped segment deployments into actionable groups for optimization.</em></p> 
+
+    <!-- Screenshot: Deployment Time Histogram -->
+    
+
+    <!-- Screenshot: Resource Usage Histogram -->
+    <img src="images/resource_histogram.png" alt="Resource usage distribution" class="project-image"/>
+
+    <!-- Screenshot: Deployment Time vs Resource Usage -->
+    <img src="images/deployvsresource.png" alt="Deployment time vs resource usage" class="project-image"/>
+
+  <h3>What Business Questions Did This Project Answer?</h3>
+  <ul>
+    <li><strong>Can we identify which deployments are inefficient?</strong><br>→ Yes. Clustering revealed ~30% of deployments with long durations and high resource drain.</li>
+    <li><strong>What drives deployment inefficiency?</strong><br>→ High correlation between time and cost; unoptimized pipelines are expensive pipelines.</li>
+    <li><strong>Is one platform better than the other?</strong><br>→ AWS showed better scalability; Azure scored higher on reliability. Each has distinct strengths.</li>
+    <li><strong>Can we predict deployment time?</strong><br>→ To some extent, but real-world deployments likely require additional qualitative inputs for stronger prediction accuracy.</li>
   </ul>
 
-  <h2>🧠 Analytical Approach</h2>
+    <!-- Screenshot: Clustering Output (K-Means) -->
+    <img src="images/kmeans.png" alt="Deployment Clustering - K-Means" class="project-image"/>
+
+    <!-- Screenshot: Hierarchical Clustering -->
+    <img src="images/hierarchial.png" alt="Hierarchical clustering result" class="project-image"/>
+
+    <!-- Screenshot: Regression Model Comparison -->
+    <img src="images/linear.png" alt="Regression model comparison" class="project-image"/>
+
+    <h3>Tools & Techniques</h3>
   <ul>
-    <li>Performed EDA with histograms, boxplots, and a correlation heatmap.</li>
-    <li>Created new feature <code>log_charges</code> to stabilize variance.</li>
-    <li>Built a linear regression model and evaluated performance with R² and MSE.</li>
+    <li>Languages: Python</li>
+    <li>Libraries: Pandas, Seaborn, Matplotlib, Scikit-learn</li>
+    <li>ML Techniques: Regression, Clustering (K-Means, Hierarchical)</li>
+    <li>Data Source: Kaggle (50K deployment records)</li>
+    <li>Metrics Analyzed: Deployment Time, Resource Usage, Efficiency, AWS Scalability, Azure Reliability</li>
   </ul>
 
-  <h2>✅ Solution & Impact</h2>
-  <p>
-    Enabled fairer and more data-driven insurance pricing by predicting costs based on key health and demographic variables. Supports strategic underwriting and pricing.
-  </p>
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>Time = money in cloud deployments. Reducing hours saves resources.</li>
+    <li>Platform matters. Teams should choose based on whether they prioritize scalability (AWS) or reliability (Azure).</li>
+    <li>Clustering is powerful. It offers a way to segment, diagnose, and optimize deployments beyond basic dashboards.</li>
+    <li>Regression has limits without qualitative context — highlighting a potential area for future mixed-method analysis.</li>
+  </ul>
 
-  <h2>🛠️ Tools & Technologies</h2>
-  <p>Python, Pandas, Scikit-learn, Matplotlib, Seaborn</p>
+  <h3>Future Work</h3>
+  <ul>
+    <li>Incorporate real-time monitoring logs to track live deployment metrics</li>
+    <li>Include cost metadata from AWS CloudWatch or Azure Monitor for true FinOps analysis</li>
+    <li>Try neural networks or LSTM models to model complex temporal patterns</li>
+    <li>Expand to multi-cloud pipelines, comparing hybrid setups and cross-provider deployments</li>
+  </ul>
 
-  <img src="images/insurance_heatmap.png" alt="Correlation heatmap" class="project-image">
-  <img src="images/log_charges_histogram.png" alt="Log charges histogram" class="project-image">
 </section>
-
-
 
   <footer>
     <p>© 2025 Saketh Vemula. All rights reserved.</p>
