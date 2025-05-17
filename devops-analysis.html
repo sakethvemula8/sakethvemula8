@@ -43,7 +43,7 @@
     <li>Organizations deploying applications on multi-cloud environments</li>
   </ul>
   <p>By delivering concrete, data-backed insights into where and why deployments slow down or become costly, this study helps teams make informed decisions about infrastructure and tooling.</p>
-
+    <br><br>
   <h3>The Approach & Tools</h3>
   <p>Using a Kaggle dataset of 50,000 deployment records, I applied a structured, data science-driven process:</p>
 
@@ -54,14 +54,14 @@
     <li>Found that most deployments took 20–80 hours and used similar ranges of cloud resources</li>
   </ul>
 
-  <img src="images/devops_correlation_heatmap.png" alt="Correlation between deployment metrics" class="project-image"/>
 
   <h4>2. Correlation Analysis</h4>
   <ul>
     <li>Uncovered a 0.99 correlation between deployment time and resource usage — meaning time is a direct cost driver</li>
     <li>Noted strong positive correlations between DevOps Efficiency Score and AWS Scalability (0.72), Azure Reliability (0.71)</li>
   </ul>
-
+<img src="images/devops_correlation_heatmap.png" alt="Correlation between deployment metrics" class="project-image"/>
+    
   <h4>3. Regression Modeling</h4>
   <ul>
     <li>Linear Regression (baseline, weak R²)</li>
@@ -69,7 +69,7 @@
     <li>Random Forest (improved stability)</li>
     <li>Gradient Boosting (best performance but still low R²)</li>
   </ul>
-  <p><em>🔍 Even advanced models struggled to predict time accurately — pointing to missing contextual features like team expertise or toolchain complexity.</em></p>
+  <p><em>Even advanced models struggled to predict time accurately — pointing to missing contextual features like team expertise or toolchain complexity.</em></p> <br> <br>
 
   <h4>4. Clustering Analysis</h4>
   <ul>
@@ -77,7 +77,7 @@
     <li>Hierarchical Clustering validated K-Means structure</li>
     <li>DBSCAN didn’t perform well due to uniform density in the data</li>
   </ul>
-  <p><em>🔍 Clustering gave far clearer insights than regression. It helped segment deployments into actionable groups for optimization.</em></p>
+  <p><em>Clustering gave far clearer insights than regression. It helped segment deployments into actionable groups for optimization.</em></p> 
 
     <!-- Screenshot: Deployment Time Histogram -->
     <img src="images/deployment_time_distribution.png" alt="Deployment time distribution" class="project-image"/>
@@ -122,14 +122,13 @@
   </ul>
 
   <h3>Tools & Techniques</h3>
-  <table>
-    <tr><th>Category</th><th>Tools Used</th></tr>
-    <tr><td>Languages</td><td>Python</td></tr>
-    <tr><td>Libraries</td><td>Pandas, Seaborn, Matplotlib, Scikit-learn</td></tr>
-    <tr><td>ML Techniques</td><td>Regression, Clustering (K-Means, Hierarchical)</td></tr>
-    <tr><td>Data Source</td><td>Kaggle (50K deployment records)</td></tr>
-    <tr><td>Metrics Analyzed</td><td>Deployment Time, Resource Usage, Efficiency, AWS Scalability, Azure Reliability</td></tr>
-  </table>
+  <ul>
+    <li>Languages: Python<li></li>
+    <li>Libraries: Pandas, Seaborn, Matplotlib, Scikit-learn</li>
+    <li>ML Techniques: Regression, Clustering (K-Means, Hierarchical)</li>
+    <li>Data Source: Kaggle (50K deployment records)</li>
+    <li>Metrics Analyzed: Deployment Time, Resource Usage, Efficiency, AWS Scalability, Azure Reliability</li>
+  </ul>
 </section>
 
   <footer>
