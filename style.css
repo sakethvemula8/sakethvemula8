@@ -89,11 +89,10 @@ nav {
 .btn {
   background-color: #688ef3;
   color: white;
-  margin-top: 2.5rem;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 /* Feature Section */
