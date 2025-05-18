@@ -113,10 +113,10 @@
 
     <img src="images/transformed_data.png" alt="Transformed Data" class="project-image"/>
 
-  <h3>4. Model Building</h3>
-  <p>Using linear regression, I trained a model on:</p>
+  <h3>4. Model Building</h3> <br>
+  <p>Using linear regression, I trained a model on:</p> <br>
   <p><code>X = insurance[["age", "bmi", "is_smoker"]]</code></p>
-  <p><code>y = insurance["log_charges"]</code></p>
+  <p><code>y = insurance["log_charges"]</code></p> <br>
   <p>Split: 75% training, 25% testing.</p> 
    <br><br>
 
@@ -128,17 +128,17 @@
   </ul>
 
   <br><br>
-    <p>Coefficients table and R²/MSE results</p>
+    <p><em>Coefficients table and R²/MSE results</em></p>
     <img src="r_mse.png" alt="R²/MSE results" class="project-image"/>
 
 
   <h2>What Business Questions Did This Project Answer?</h2>
   <ul>
-    <li><strong>Which factors most influence insurance charges?</strong><br>→ Smoking, age, and BMI are major cost drivers.</li>
-    <li><strong>Can we reliably forecast insurance charges using customer info?</strong><br>→ Yes — especially when charges are 
-      log-transformed.</li>
+    <li><strong>Which factors most influence insurance charges?</strong><br>→ Smoking, age, and BMI are major cost drivers.</li> <br>
+    <li><strong>Can we reliably forecast insurance charges using customer info?</strong><br>→ Yes, especially when charges are 
+      log-transformed.</li> <br>
     <li><strong>Are there clear segments that insurers should watch?</strong><br>→ Smokers and older individuals with high BMI consistently 
-      show higher costs.</li>
+      show higher costs.</li> 
   </ul>
 
     
@@ -151,7 +151,7 @@
 
   <h2>Key Takeaways</h2>
   <ul>
-    <li>EDA isn’t just step one — it’s where the real story starts.</li>
+    <li>EDA isn’t just step one, it’s where the real story starts.</li>
     <li>Feature transformation (e.g., is_smoker, log_charges) is critical in real-world messy data.</li>
     <li>Predictive modeling works best when paired with explanatory storytelling.</li>
   </ul>
