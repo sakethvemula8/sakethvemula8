@@ -3,211 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title> Saketh | Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Saketh | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-  <nav class="navbar">
-  <div class="logo">Saketh's Portfolio</div>
-
-  <div class="nav-right">
-    <div class="hamburger" id="hamburger">&#9776;</div>
-
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <button id="theme-toggle" class="btn">🌞</button>
-  </div>
-</nav>
-</header>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li class="active"><a href="#home">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <section class="hero">
-  <div class="hero-content">
-    <h1>Hi, I'm Saketh <span class="wave">👋</span></h1>
-    <p><strong>From Raw Data to Real Impact</strong> <br><br>
-      I made this portfolio to showcase my journey as a data enthusiast through projects that <br>
-        solve real problems with analytics and storytelling.</p>
-    <a href="#about" class="btn">See My Work</a>
+    <h1>Saketh Raghava</h1>
+    <h2>Data Analyst</h2>
+    <p>Collect, process, analyse and present data – from supporting everyday business decisions to driving global change</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </section>
 
-    <div class="social-icons">
-      <a href="mailto:sakethraghava1@gmail.com" target="_blank" aria-label="Email">
-        <i class="fas fa-envelope fa-lg"></i>
-      </a>
-      <a href="https://github.com/sakethvemula8" target="_blank" aria-label="GitHub">
-        <i class="fab fa-github fa-lg"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/saketh-raghava/" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin fa-lg"></i>
-      </a>
+  <section class="features">
+    <div class="feature">
+      <img src="assets/icons/collect-icon.png" alt="Collect Icon">
+      <h3>Collect</h3>
+      <p>I gather data using Python, SQL, and Airbyte from APIs, cloud sources, and databases.</p>
     </div>
-  </div>
-</section>
+    <div class="feature">
+      <img src="assets/icons/process-icon.png" alt="Process Icon">
+      <h3>Process</h3>
+      <p>I build automated, scalable ETL pipelines using dbt, Snowflake, and cloud tools like AWS and Azure.</p>
+    </div>
+    <div class="feature">
+      <img src="assets/icons/visualise-icon.png" alt="Visualise Icon">
+      <h3>Visualize</h3>
+      <p>I design dashboards in Power BI, Tableau, and Python to visualize trends, forecasts, and ML outputs.</p>
+    </div>
+  </section>
 
-
-  <section id="about" class="about-section">
-  <div class="about-container">
+ <section class="about-section">
+  <div class="about-wrapper">
     <div class="about-image">
-      <img src="assets/profile.jpg" alt="Saketh Vemula Profile Photo" />
+      <img src="assets/about-photo.jpg" alt="About Me Photo">
     </div>
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p style="text-align: center;">
-        Hi, I’m Saketh — a Data Analyst with a strong data engineering and machine learning foundation and a passion for turning raw data into real-world impact. 
-        With a Master’s in Information Technology from the University of Cincinnati and hands-on experience across manufacturing, healthcare, 
-        and marketing analytics, I’ve spent the last few years building dashboards, automating data pipelines, and diving deep into problems 
-        that matter. <br> <br>
-
-        This portfolio is a space where I bring together some of my favorite projects, not just to showcase my technical skills,
-        but to tell the story behind the data.  I’m always learning, always building, and always looking for ways to grow both as a data
-        professional and a teammate.
+    <div class="about-content">
+      <h2>About me</h2>
+      <p>
+        I am Saketh, a data analyst and engineer passionate about helping organizations make effective use of their data —
+        from defining what to measure, to accurate data capture, through pipeline development, data preparation, analysis, and visual storytelling.
+        I help teams make evidence-driven decisions and create clarity from complexity.
       </p>
-      </ul>
+      <p>
+        I’m actively seeking full-time opportunities and am open to relocating anywhere for the right role.
+      </p>
     </div>
   </div>
 </section>
 
+  <section id= "portfolio" class="portfolio-section">
+  <h2 class="portfolio-title">Portfolio</h2>
+  <p class="portfolio-subtitle">A sample of my work</p>
 
-  <section id="projects" class="projects-section">
-  <h2 class="section-title">Projects</h2>
-  <div class="projects-container">
-
-
-    <div class="project-card">
-      <h3>Linear Regression: Predicting Insurance Costs</h3>
-      <p>Developed a model to predict insurance costs using demographics, lifestyle data, EDA techniques, and regression modeling.</p>
-      <div class="tags">
-        <span>Python</span><span>Regression</span><span>EDA</span>
+  <div class="portfolio-grid">
+    <!-- Project Item -->
+    <a href="project1.html" class="portfolio-item">
+      <img src="assets/projects/project1-thumbnail.jpg" alt="Project 1">
+      <div class="overlay">
+        <span>Linear Regression: Predicting Insurance Costs</span>
       </div>
-      <div class="links">
-        <a href="predicting-insurance.html">View Details →</a>
+    </a>
+
+    <a href="project2.html" class="portfolio-item">
+      <img src="assets/projects/project2-thumbnail.jpg" alt="Project 2">
+      <div class="overlay">
+        <span>Avalanche Analytics – Orders & Reviews Insights</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project-card">
-      <h3>Avalanche Analytics – Orders & Reviews Insights</h3>
-      <p>Analyzed order and review data using Snowflake and Snowpark to generate delivery insights and automate product sentiment reporting.</p>
-      <div class="tags">
-        <span>Snowflake</span><span>Snowpark</span><span>Python</span>
+    <a href="project3.html" class="portfolio-item">
+      <img src="assets/projects/project3-thumbnail.jpg" alt="Project 3">
+      <div class="overlay">
+        <span>DevOps Deployment Analysis on Azure and AWS</span>
       </div>
-      <div class="links">
-        <a href="avalanche-analytics.html">View Details →</a>
+    </a>
+    
+    <a href="project4.html" class="portfolio-item">
+      <img src="assets/projects/project4-thumbnail.jpg" alt="Project 4">
+      <div class="overlay">
+        <span>Astronaut Data ETL Pipeline Using Apache Airflow</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project-card">
-      <h3>DevOps Deployment Analysis on Azure and AWS</h3>
-      <p>Analyzed deployment efficiency across AWS and Azure using clustering and regression models. Derived cost-saving insights.</p>
-      <div class="tags">
-        <span>EDA</span><span>Regression</span><span>Clustering</span>
+    <a href="project5.html" class="portfolio-item">
+      <img src="assets/projects/project5-thumbnail.jpg" alt="Project 5">
+      <div class="overlay">
+        <span>Data Visualization: Adidas Sales Analysis</span>
       </div>
-      <div class="links">
-        <a href="devops-analysis.html">View Details →</a>
+    </a>
+
+    <a href="project6.html" class="portfolio-item">
+      <img src="assets/projects/project6-thumbnail.jpg" alt="Project 6">
+      <div class="overlay">
+        <span>Customer Segmentation for Targeted Ads</span>
       </div>
-    </div>
-
-    <div class="project-card">
-      <h3>Astronaut Data ETL Pipeline Using Apache Airflow</h3>
-      <p>Built an ETL pipeline in Airflow to fetch, process, and display real-time astronaut data from public APIs.</p>
-      <div class="tags">
-        <span>Airflow</span><span>Python</span><span>API Integration</span>
-      </div>
-      <div class="links">
-        <a href="astronaut-etl.html">View Details →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <h3>Data Visualization: Adidas Sales Analysis</h3>
-      <p>Analyzed Adidas sales data using Power BI to visualize profits, units sold, pricing, and regional performance trends.</p>
-      <div class="tags">
-        <span>Power BI</span><span>Data Visualization</span><span>DAX</span>
-      </div>
-      <div class="links">
-        <a href="powerbi-adidas.html">View Details →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <h3>Customer Segmentation for Targeted Ads</h3>
-      <p>Analyzed deployment efficiency across AWS and Azure using clustering and regression models. Derived cost-saving insights.</p>
-      <div class="tags">
-        <span>Snowflake</span><span>ML</span><span>AWS</span>
-      </div>
-      <div class="links">
-        <a href="https://github.com/yourusername/devops-analysis" target="_blank">GitHub</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <h3>DevOps Deployment Analysis</h3>
-      <p>Analyzed deployment efficiency across AWS and Azure using clustering and regression models. Derived cost-saving insights.</p>
-      <div class="tags">
-        <span>Snowflake</span><span>ML</span><span>AWS</span>
-      </div>
-      <div class="links">
-        <a href="https://github.com/yourusername/devops-analysis" target="_blank">GitHub</a>
-      </div>
-    </div>
-
-  </div>
-
-
- <section id="skills" class="skills-section">
-  <h2 class="section-title">Skills</h2>
-  <!--<p class="skills-intro">
-    I can optimize your data for better results, informed decisions and cost savings. My proficiency in tools like SQL, Python, Power BI, and ML, combined with strong soft skills, enables me to deliver impactful data solutions.
-  </p> -->
-
-  <div class="skills-grid clean-layout">
-    <div class="skill-item">
-      <img src="icons/data-analysis.png" alt="Data Analysis Icon">
-      <h3>Data Analysis</h3>
-      <p>Uncover hidden insights and patterns within your data to identify trends, anomalies and opportunities for data-driven decision-making.</p>
-    </div>
-
-    <div class="skill-item">
-      <img src="icons/data-analytics.png" alt="Data Analytics Icon">
-      <h3>Data Engineering</h3>
-      <p>Harness the power of advanced data engineering, including scalable pipelines and automated workflows to streamline data integration and optimize infrastructure.</p>
-    </div>
-
-    <div class="skill-item">
-      <img src="icons/data-viz.png" alt="Data Visualization Icon">
-      <h3>Data Visualization</h3>
-      <p>Transform complex data into clear, compelling visual narratives through custom dashboards and reports.</p>
-    </div>
-
-    <div class="skill-item">
-      <img src="icons/technical-writing.png" alt="Technical Writing Icon">
-      <h3>Technical Writing</h3>
-      <p>Translate intricate technical concepts into clear, concise documentation to ensure your data projects are well-understood and accessible.</p>
-    </div>
-
-    <div class="skill-item">
-      <img src="icons/web-dev.png" alt="Web Development Icon">
-      <h3>Web Development</h3>
-      <p>Craft intuitive, data-driven web interfaces that blend functionality and design to present meaningful insights.</p>
-    </div>
-
-    <div class="skill-item">
-      <img src="icons/collaboration.png" alt="Collaboration Icon">
-      <h3>Collaboration</h3>
-      <p>Work seamlessly with teams to integrate data solutions that align with business needs and drive results.</p>
-    </div>
+    </a>
+    
   </div>
 </section>
-
-
 
 <section id="contact" class="contact-section">
-  <h2 class="section-title">Contact Me</h2>
+  <h2 class="contact-title">Get In Touch</h2>
+  <p class="contact-subtitle">Do you have a project I can help you with? Let’s talk about it.</p>
   <div class="contact-container">
     
     <!-- Contact Form -->
@@ -226,43 +134,6 @@
   </div>
 </section>
 
-
-
-  <footer>
-    <p>© 2025 Saketh Vemula. All Rights Reserved.</p>
-  </footer>
-  
-  <script>
-  const toggleBtn = document.getElementById('theme-toggle');
-  const userTheme = localStorage.getItem('theme');
-
-  if (userTheme === 'light') {
-    document.body.classList.add('light-mode');
-    toggleBtn.textContent = '🌞';
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    const isLight = document.body.classList.toggle('light-mode');
-    toggleBtn.textContent = isLight ? '🌞' : '🌙';
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  });
-</script>
-   
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    
-    // Toggle hamburger icon between ☰ and ✖
-    if (navLinks.classList.contains('active')) {
-      hamburger.innerHTML = '&times;'; // ✖
-    } else {
-      hamburger.innerHTML = '&#9776;'; // ☰
-    }
-  });
-</script>
 
 
 </body>
