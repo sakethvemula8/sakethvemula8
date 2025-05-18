@@ -23,7 +23,7 @@
     and regression modeling.
   </p>
 
-<h2>The Problem: What Did I Solve?</h2>
+<h2>The Problem: What Did I Solve?</h2> <br>
   <p>In the healthcare insurance industry, accurately pricing premiums is crucial. Overpricing may drive away potential customers,
     underpricing can harm the company's bottom line. The goal of this project was to explore how individual demographics and habits 
     affect medical insurance charges, and whether we can predict future charges using these features. <br> <br>
@@ -35,8 +35,8 @@
 
     <img src="images/insurance_head.png" alt="Insurance Head" class="project-image"/>
 
-  <h2>Who Is This For?</h2>
-  <p>This project is built for:</p>
+  <h2>Who Is This For?</h2> <br>
+  <p>This project is built for:</p> 
   <ul>
     <li>Insurance Analysts: to support underwriting and pricing decisions.</li>
     <li>Healthcare Policy Strategists: to identify high-risk populations.</li>
@@ -46,8 +46,8 @@
     and explain results clearly.</p>
     <br><br>
     
-  <h2>My Approach- Step by Step</h2>
-  <h3>1. Understanding the Data</h3>
+  <h2>My Approach- Step by Step</h2> <br>
+  <h3>1. Understanding the Data</h3> <br>
   <p>The dataset used is from Kaggle, representing individuals’ medical and personal attributes:</p>
   <ul>
     <li>Age, gender, BMI, number of children</li>
@@ -63,7 +63,7 @@
     <li>How is the target distributed?</li>
   </ul>
     <br> <br>
-    <p>The <code>charges</code> column (our outcome) is highly skewed. That’s a red flag in regression — where we assume errors are normally distributed.</p>
+    <p>The <code>charges</code> column (our outcome) is highly skewed. That’s a red flag in regression — where we assume errors are normally distributed.</p> <br><br>
     
     <p><em>Histogram of <code>charges</code>: Below screenshot shows the heavy right skew, motivating a log transformation.</em></p>
     <img src="images/charges_histogram.png" alt="Charges Histogram" class="project-image"/>
@@ -73,14 +73,14 @@
       the variable better suited for regression.</em></p>
     <img src="images/log_charges_histogram.png" alt="Log Charges Histogram" class="project-image"/>
     
-  <h3>2. Feature Selection & Visualization</h3>
+  <h3>2. Feature Selection & Visualization</h3> <br>
     <p>EDA isn’t just about visuals, it’s about interrogating the data. I asked:</p>
   <ul>
     <li>Do age and charges rise together?</li>
     <li>Do smokers have higher costs?</li>
     <li>Does gender or region matter?</li>
   </ul>
-    <br><br>
+    <br>
     <p>Findings:</p>
     <ul>
     <li>Smokers have drastically higher charges.</li>
@@ -106,9 +106,9 @@
   </ul>
   <p>This avoids overfitting and makes the model more interpretable.</p>
     
-  <h3>3. Data Transformation</h3>
-  <p>Good data analysts know that how you shape your data affects what it can reveal. And, I engineered a new feature:</p>
-  <p><code>insurance["is_smoker"] = (insurance["smoker"] == "yes")</code></p>
+  <h3>3. Data Transformation</h3> <br>
+  <p>Good data analysts know that how you shape your data affects what it can reveal. And, I engineered a new feature:</p> <br>
+  <p><code>insurance["is_smoker"] = (insurance["smoker"] == "yes")</code></p> <br>
   <p>This binary transformation simplifies model interpretation and increases accuracy.</p> <br> <br>
 
     <img src="images/transformed_data.png" alt="Transformed Data" class="project-image"/>
@@ -132,7 +132,7 @@
     <img src="r_mse.png" alt="R²/MSE results" class="project-image"/>
 
 
-  <h2>What Business Questions Did This Project Answer?</h2>
+  <h2>What Business Questions Did This Project Answer?</h2> <br>
   <ul>
     <li><strong>Which factors most influence insurance charges?</strong><br>→ Smoking, age, and BMI are major cost drivers.</li> <br>
     <li><strong>Can we reliably forecast insurance charges using customer info?</strong><br>→ Yes, especially when charges are 
