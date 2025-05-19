@@ -447,21 +447,21 @@ body {
 .project-detail h3 {
   font-size: 1.5rem;
   color: #ef4444;
-  margin-top: 0rem;
+  margin-top: 0.2rem;
   font-weight: 500;
 }
 
 .project-detail p {
-  margin-bottom: 0rem;
+  margin-bottom: 0.3rem;
 }
 
 .project-detail ul {
   padding-left: 1.25rem;
-  margin-bottom: 0rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-detail li {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-detail code {
