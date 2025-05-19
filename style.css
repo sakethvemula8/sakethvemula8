@@ -431,34 +431,34 @@ body {
 }
 
 .project-detail h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #3b82f6; /* blue accent */
-  margin-bottom: 1rem;
-  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .project-detail h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #ef4444; /* red accent */
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
   font-weight: 500;
 }
 
 .project-detail h3 {
-  font-size: 1.2rem;
-  color: #1e293b;
-  margin-top: 2rem;
+  font-size: 1.5rem;
+  color: #ef4444;
+  margin-top: 1rem;
   font-weight: 500;
 }
 
 .project-detail p {
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.2rem;
 }
 
 .project-detail ul {
   padding-left: 1.25rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-detail li {
@@ -475,8 +475,8 @@ body {
 }
 
 .project-image {
-  max-width: 400px;
-  border-radius: 0.5rem;
+  max-width: 500px;
+  border-radius: 0.2rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   margin: 2rem 0;
 }
