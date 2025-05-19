@@ -440,29 +440,28 @@ body {
 .project-detail h2 {
   font-size: 2rem;
   color: #ef4444; /* red accent */
-  margin-top: 1rem;
-  margin-bottom: 0rem;
+  margin-top: 0rem;
   font-weight: 500;
 }
 
 .project-detail h3 {
   font-size: 1.5rem;
   color: #ef4444;
-  margin-top: 1rem;
+  margin-top: 0rem;
   font-weight: 500;
 }
 
 .project-detail p {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0rem;
 }
 
 .project-detail ul {
   padding-left: 1.25rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
 }
 
 .project-detail li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .project-detail code {
