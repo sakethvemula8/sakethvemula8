@@ -1,1 +1,77 @@
-hey
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snowflake Analytics</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html#projects">← Back to Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="project-detail">
+  <h1>Snowflake Analytics</h1>
+  <h2>Scalable Order & Shipping Insights with Snowpark Pandas</h2>
+  <p class="overview">
+    Avalanche is a fast-growing winter sports gear company, known for delivering everything from snowboards to ski goggles. 
+    But with growth came new headaches. As customer demand surged, so did delivery delays, order fulfillment hiccups, and unreliable 
+    shipping partners. The team needed more than guesswork—they needed clear, data-backed answers. To tackle the problem, I built a 
+    scalable analytics pipeline powered by Snowflake’s Snowpark and the Pandas API via Modin, all within a Python environment. 
+    This setup helped Avalanche dig deep into their shipping and order data without sacrificing performance or flexibility. 
+    The outcome? Smarter decisions, faster deliveries, and happier customers.
+  </p>
+
+<h2>Business Problem</h2>
+  <p>As Avalanche scaled, so did their logistical complexity. Orders were being delayed, some shipping partners were 
+    underperforming, and customer complaints were on the rise. The company wanted to understand:</p>
+  <ul>
+    <li>Which regions are experiencing chronic shipping delays?</li>
+    <li>Which shipping providers deliver fastest and most reliably?</li>
+    <li>How does delivery time vary by product type and order size?</li>
+    <li>Are there seasonal patterns in delays or high-performing zones?</li>
+  </ul>
+  <p>They needed answers at scale, and they needed them fast.<br>
+
+  <h2>The Snowflake + Snowpark Advantage</h2>
+  <p>Traditional pandas pipelines struggle with scale. That’s why this project leverages Snowpark for Python with Modin, 
+    offering the ability to write familiar pandas-style code while executing it in a distributed, cloud-native environment directly on Snowflake. Here's how it works:</p>
+  <ul>
+    <li>The project initiates a <code>Snowpark</code> session within a Jupyter notebook.</li>
+    <li>All transformation logic, from filtering to group-bys, is done via Snowflake’s compute engine behind the scenes.</li>
+    <li>The use of query tagging ensures traceability and observability during production.</li>
+  </ul>
+  <p>This hybrid architecture provides the best of both worlds—developer ergonomics and enterprise-grade scalability.</p>
+ 
+  <h2>Data Pipeline Overview</h2>
+  <p>After ingesting order and shipping data from Avalanche’s cloud warehouse, the pipeline:</p>
+    <ul>
+    <li>Cleans and preprocesses the data using Snowpark's DataFrame API and pandas-on-Snowflake.</li>
+    <li>Calculates key metrics such as: Average delivery time by region and shipping partner, On-time delivery rate across months, 
+      Delayed shipments breakdown by product category.</li>
+  </ul>
+
+    <h2>Tools & Techniques</h2>
+  <ul>
+    <li>Snowflake: Scalable data warehouse</li>
+    <li>Snowpark: Python API for in-database compute</li>
+    <li>Modin: Distributed pandas for performance</li>
+    <li>Seaborn: Data visualization</li>
+    <li>Jupyter: Interactive development & storytelling</li>
+  </ul>
+
+  <h2>Key Takeaways</h2>
+  <p>This project is a real-world demonstration of how modern analytics stacks can empower operations teams. 
+    By combining Snowflake’s scalability with the expressive flexibility of pandas, the Avalanche team is now equipped to 
+    make data-driven logistical decisions—ensuring faster shipping, optimized vendor contracts, and happier customers.
+Whether you're a data professional or a business leader, this pipeline shows how cloud-native data science can transform operational efficiency at scale.</p>
+
+</section>
+  
+</body>
+</html>
