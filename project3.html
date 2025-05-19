@@ -24,7 +24,7 @@
     teams could actually use.
   </p>
 
-<h3>The Business Problem</h3>
+<h2>The Business Problem</h2>
   <p>In today’s cloud-driven DevOps world, organizations rely on continuous delivery pipelines to ship code quickly and reliably. But even with automation, many teams face a familiar set of challenges:</p>
   <ul>
     <li>Long and unpredictable deployment times</li>
@@ -35,7 +35,7 @@
   <strong>How can organizations quantify and optimize their cloud-based DevOps deployments to achieve faster, more cost-effective, and reliable delivery?</strong></p>
     <br> 
 
-  <h3>Who Is This For?</h3>
+  <h2>Who Is This For?</h2>
   <p>This work directly benefits:</p>
   <ul>
     <li>DevOps engineers and Cloud architects optimizing CI/CD pipelines</li>
@@ -44,10 +44,10 @@
   </ul>
   <p>By delivering concrete, data-backed insights into where and why deployments slow down or become costly, this study helps teams make informed decisions about infrastructure and tooling.</p>
     <br><br>
-  <h3>The Approach & Tools</h3>
+  <h2>The Approach & Tools</h2>
   <p>Using a Kaggle dataset of 50,000 deployment records, I applied a structured, data science-driven process:</p>
 
-  <h4>1. Preprocessing & EDA</h4>
+  <h3>1. Preprocessing & EDA</h3>
   <ul>
     <li>Cleaned and validated numerical data (no missing values or categorical variables)</li>
     <li>Explored patterns in deployment time, resource usage, and platform metrics like AWS Scalability and Azure Reliability</li>
@@ -58,14 +58,14 @@
     
 
 
-  <h4>2. Correlation Analysis</h4>
+  <h3>2. Correlation Analysis</h3>
   <ul>
     <li>Uncovered a 0.99 correlation between deployment time and resource usage — meaning time is a direct cost driver</li>
     <li>Noted strong positive correlations between DevOps Efficiency Score and AWS Scalability (0.72), Azure Reliability (0.71)</li>
   </ul>
 <img src="images/correlation.png" alt="Correlation between deployment metrics" class="project-image"/>
     
-  <h4>3. Regression Modeling</h4>
+  <h3>3. Regression Modeling</h3>
   <ul>
     <li>Linear Regression (baseline, weak R²)</li>
     <li>Decision Tree (overfit)</li>
@@ -74,7 +74,7 @@
   </ul>
   <p><em>Even advanced models struggled to predict time accurately — pointing to missing contextual features like team expertise or toolchain complexity.</em></p> <br> <br>
 
-  <h4>4. Clustering Analysis</h4>
+  <h3>4. Clustering Analysis</h3>
   <ul>
     <li>K-Means (4 clusters): Identified patterns such as high efficiency + low usage and low efficiency + high cost</li>
     <li>Hierarchical Clustering validated K-Means structure</li>
@@ -91,7 +91,7 @@
     <!-- Screenshot: Deployment Time vs Resource Usage -->
     <img src="images/deployvsresource.png" alt="Deployment time vs resource usage" class="project-image"/>
 
-  <h3>What Business Questions Did This Project Answer?</h3>
+  <h2>What Business Questions Did This Project Answer?</h2>
   <ul>
     <li><strong>Can we identify which deployments are inefficient?</strong><br>→ Yes. Clustering revealed ~30% of deployments with long durations and high resource drain.</li>
     <li><strong>What drives deployment inefficiency?</strong><br>→ High correlation between time and cost; unoptimized pipelines are expensive pipelines.</li>
@@ -108,7 +108,7 @@
     <!-- Screenshot: Regression Model Comparison -->
     <img src="images/linear.png" alt="Regression model comparison" class="project-image"/>
 
-    <h3>Tools & Techniques</h3>
+    <h2>Tools & Techniques</h2>
   <ul>
     <li>Languages: Python</li>
     <li>Libraries: Pandas, Seaborn, Matplotlib, Scikit-learn</li>
@@ -117,7 +117,7 @@
     <li>Metrics Analyzed: Deployment Time, Resource Usage, Efficiency, AWS Scalability, Azure Reliability</li>
   </ul>
 
-  <h3>Key Takeaways</h3>
+  <h2>Key Takeaways</h2>
   <ul>
     <li>Time = money in cloud deployments. Reducing hours saves resources.</li>
     <li>Platform matters. Teams should choose based on whether they prioritize scalability (AWS) or reliability (Azure).</li>
@@ -125,7 +125,7 @@
     <li>Regression has limits without qualitative context — highlighting a potential area for future mixed-method analysis.</li>
   </ul>
 
-  <h3>Future Work</h3>
+  <h2>Future Work</h2>
   <ul>
     <li>Incorporate real-time monitoring logs to track live deployment metrics</li>
     <li>Include cost metadata from AWS CloudWatch or Azure Monitor for true FinOps analysis</li>
