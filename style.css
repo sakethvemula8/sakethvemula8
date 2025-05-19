@@ -452,12 +452,12 @@ body {
 }
 
 .project-detail p {
-  margin-bottom: 0.3rem;
+  margin: 0.2rem 0 0.3rem 0;
 }
 
 .project-detail ul {
   padding-left: 1.25rem;
-  margin-bottom: 1rem;
+  margin: 0.2rem 0 1rem 0;
 }
 
 .project-detail li {
