@@ -60,8 +60,6 @@
     <li>Explored patterns in deployment time, resource usage, and platform metrics like AWS Scalability and Azure Reliability</li>
     <li>Found that most deployments took 20–80 hours and used similar ranges of cloud resources</li>
   </ul>
-
-    <img src="images/statisticalanalysis.png" alt="Statistical Analysis" class="project-image"/>
     
 <h2>Modular Data Modeling with dbt</h2>
   <p>
@@ -87,6 +85,20 @@
     <li><code>airflow-cli</code> for interacting with dbt</li>
   </ul>
 
+    <h2>How It All Works Together</h2>
+  <p>
+    Here’s what a full run of the pipeline looks like:
+  </p>
+  <ul>
+    <li><code>docker-compose up</code> launches Airflow and dbt.</li>
+    <li>In the Airflow UI, I manually trigger the DAG (or wait for its schedule).</li>
+    <li>The DAG runs step-by-step:
+        <li>Extracts or simulates data</li>
+        <li>Runs <code>dbt run</code> and <code>dbt test</code></li>
+        <li>Loads transformed data into the warehouse (mocked with Postgres or file output)</li>
+    </li>
+    <li>I validate output tables and lineage via dbt docs.</li>
+  </ul>
 
     <h2>Advice</h2>
   <p>My advice to anyone starting with Airflow is to avoid jumping straight into complex DAGs. Start small—get comfortable with the Airflow UI, 
