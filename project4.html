@@ -1,1 +1,108 @@
-hii
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ETL Pipeline</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html#portfolio">← Back to Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="project-detail">
+  <h1>Building a Scalable ETL Pipeline</h1>
+  <p class="overview">
+    In the last few years, I’ve worked on various data analytics and engineering projects — from forecasting service part demands 
+    in manufacturing to building ML-powered monitoring systems in healthcare. But one thing I kept encountering, again and again, 
+    was the need for clean, reliable, and automated data pipelines.
+    I knew I needed to get more hands-on with the modern data stack — not just SQL scripts or Python notebooks, but something scalable 
+    and production-grade. That’s what led me to this project — designing a modular ETL pipeline from scratch using Apache Airflow, dbt,
+    and Docker. This blog captures my journey, architecture, tools, and lessons learned along the way.
+  </p>
+
+<h2>Moving Beyond Ad-Hoc Pipelines</h2>
+  <p>Many entry-level data projects stop at CSVs, Jupyter notebooks, or cron jobs. But in the real world, these quickly become hard to scale:</p>
+  <ul>
+    <li>What if your data source updates daily at midnight?</li>
+    <li>What if you need to transform hundreds of tables, each with dependencies?</li>
+    <li>What if a pipeline breaks silently, and no one knows until a dashboard goes blank?</li>
+  </ul>
+  <p>I wanted to simulate a real-world data engineering setup, where:<br>
+  <ul>
+    <li>ETL workflows are orchestrated and traceable.</li>
+    <li>Transformations are version-controlled and tested.</li>
+    <li>Environments are consistent, portable, and easy to replicate.</li>
+  </ul></p>
+
+  <h2>Tools I Chose (and Why)</h2>
+  <p>This wasn’t a random tech stack, every tool was chosen to solve a specific pain point:</p>
+  <ul>
+    <li>Apache Airflow for orchestration and scheduling. I wanted to visualize DAGs, set retries, and have visibility into every task.</li>
+    <li>dbt (data build tool) for the T in ETL. It lets me modularize SQL, write transformation logic cleanly, and enforce data quality checks.</li>
+    <li>Docker to ensure anyone can run this on their machine with a single command, without worrying about dependencies.</li>
+    <li>PostgreSQL (optional) for testing the load phase into a real warehouse-like target.</li>
+  </ul>
+    <p>This project follows a modular and layered structure. At a high level, it’s split into: Airflow DAGs, dbt Models, Docker Compose.</p>
+     <img src="images/etl-dag.png" alt="ETL" class="project-image"/>
+  
+    <h2>The DAG: Heart of the Pipeline</h2>
+  <p>The DAG (Directed Acyclic Graph) defines the logic of the ETL process. I used Python to configure tasks like ingesting sample data (or simulating extraction), 
+  Triggering dbt commands (<code>dbt run</code>, <code>dbt test</code>) and sending success or failure logs.</p>
+    <p>Airflow gave me full visibility into how each job runs, how long it takes, and whether it failed.</p>
+  <ul>
+    <li>Cleaned and validated numerical data (no missing values or categorical variables)</li>
+    <li>Explored patterns in deployment time, resource usage, and platform metrics like AWS Scalability and Azure Reliability</li>
+    <li>Found that most deployments took 20–80 hours and used similar ranges of cloud resources</li>
+  </ul>
+
+    <img src="images/statisticalanalysis.png" alt="Statistical Analysis" class="project-image"/>
+    
+<h2>Modular Data Modeling with dbt</h2>
+  <p>
+    This is where most of the magic happens. Instead of writing one giant SQL script, <strong>dbt</strong> encourages a layered, modular approach:
+  </p>
+  <ul>
+    <li><strong>Staging models (<code>stg_</code>):</strong> Clean and rename columns, remove duplicates</li>
+    <li><strong>Intermediate models (<code>int_</code>):</strong> Join tables, apply business logic</li>
+    <li><strong>Final models (<code>dim_</code>, <code>fct_</code>):</strong> Ready for analytics and dashboards</li>
+  </ul>
+  <p>
+    Each model can be tested with built-in <code>dbt</code> tests — e.g., checking for nulls, uniqueness, or referential integrity.
+  </p>
+
+    <h2>Containerization with Docker</h2>
+  <p>
+    Setting up Airflow and dbt manually would’ve taken hours. Instead, I created a <code>Dockerfile</code> and <code>docker-compose.yml</code> that launch all components in isolated containers.
+  </p>
+  <p>I defined services for:</p>
+  <ul>
+    <li><code>airflow-webserver</code></li>
+    <li><code>airflow-scheduler</code></li>
+    <li><code>airflow-cli</code> for interacting with dbt</li>
+  </ul>
+
+
+    <h2>Advice</h2>
+  <p>My advice to anyone starting with Airflow is to avoid jumping straight into complex DAGs. Start small—get comfortable with the Airflow UI, 
+    experiment with PythonOperator and BashOperator, and understand how scheduling and task dependencies work. Once you're confident, introduce 
+    tools like dbt into your DAGs. Treat Airflow as your pipeline’s control tower, and make sure every task has clear logging and error handling. 
+    It’ll save you hours of debugging later.</p>
+
+  <h2>Want to Try It?</h2>
+    <p>The code and documentation are available on GitHub:</p>
+    <p>
+  <a href="https://github.com/sakethvemula8/ETL-Pipeline" target="_blank" rel="noopener noreferrer">
+    ETL-Pipeline Repository
+  </a>
+</p>
+
+</section>
+  
+</body>
+</html>
