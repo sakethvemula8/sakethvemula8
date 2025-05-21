@@ -487,7 +487,6 @@ body {
 }
 
 .project-try {
-  text-align: center;
   margin-top: 3rem;
   margin-bottom: 2rem;
 }
@@ -496,7 +495,7 @@ body {
   font-size: 2rem;
   color: #ef4444; /* soft red */
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .project-try p {
