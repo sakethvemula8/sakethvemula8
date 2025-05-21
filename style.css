@@ -283,6 +283,11 @@ nav {
 
   .portfolio-grid {
     grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .portfolio-item {
+    width: 100%;
   }
 
   .portfolio-item .overlay {
