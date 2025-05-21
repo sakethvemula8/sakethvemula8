@@ -145,7 +145,7 @@ nav {
 .about-image {
   flex: 1;
   min-width: 320px;
-  max-width: 500px; /* optional: limit image width */
+  max-width: 350px; /* optional: limit image width */
   height: auto;
 }
 
