@@ -159,7 +159,7 @@ nav {
 
 .about-content {
   flex: 1;
-  background-color: #688ef3; /* blue background only for text */
+  background-color: #3b82f6; /* blue background only for text */
   color: #ffffff;
   padding: 3rem;
   display: flex;
@@ -251,7 +251,7 @@ nav {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(85, 115, 215, 0.7);
+  background-color: rgb(59, 130, 246, 0.6);
   color: #ffffff;
   display: flex;
   align-items: center;
