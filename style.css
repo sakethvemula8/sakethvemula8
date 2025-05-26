@@ -92,7 +92,8 @@ nav {
 }
 
 .btn {
-  background-color: #688ef3;
+  /* background-color: #688ef3; */
+  background-color: #5B8FF9;
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
