@@ -160,7 +160,8 @@ nav {
 
 .about-content {
   flex: 1;
-  background-color: #3b82f6; /* blue background only for text */
+  /*background-color: #3b82f6; blue background only for text */
+  background-color: #334155;
   color: #ffffff;
   padding: 3rem;
   display: flex;
