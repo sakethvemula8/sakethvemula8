@@ -224,13 +224,13 @@ nav {
   gap: 0; /* Keep tiles flush like your reference */
   width: 100%;
   margin: 0 auto;
-  max-width: 1300px;
+  max-width: 1400px;
 }
 
 /* Grid Item */
 .portfolio-item {
-  width: 400px;
-  height: 225px;
+  width: 365px;
+  height: 250px;
   position: relative;
   display: block;
   overflow: hidden;
