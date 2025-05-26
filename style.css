@@ -67,7 +67,8 @@ nav {
 .hero h1 {
   font-size: 4rem;
   font-weight: 600;
-  color: #3b82f6; 
+  /*color: #3b82f6; */
+  color: #1e293b;
   letter-spacing: -0.5px;
   line-height: 1.1;
   -webkit-font-smoothing: antialiased;
