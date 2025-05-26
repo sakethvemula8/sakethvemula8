@@ -224,7 +224,7 @@ nav {
   gap: 0; /* Keep tiles flush like your reference */
   width: 100%;
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 1300px;
 }
 
 /* Grid Item */
