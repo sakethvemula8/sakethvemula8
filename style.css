@@ -229,7 +229,7 @@ nav {
 
 /* Grid Item */
 .portfolio-item {
-  width: 300px;
+  width: 400px;
   height: 225px;
   position: relative;
   display: block;
@@ -251,7 +251,7 @@ nav {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgb(59, 130, 246, 0.8);
+  background-color: rgba(59, 130, 246, 0.8);
   color: #ffffff;
   display: flex;
   align-items: center;
