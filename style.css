@@ -342,7 +342,7 @@ nav {
   left: 0;
   bottom: -5px;
   height: 2px;
-  width: 70%;
+  width: 100%;
   transform: translateX(-50%);
   background-color: #ef4444;
 }
