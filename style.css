@@ -302,6 +302,67 @@ nav {
 /* Contact Section  */
 /* =============================== */
 
+.skills-section {
+  padding: 4rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skills-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  background-color: transparent;
+  border: 2px solid #688ef3;
+  color: #688ef3;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background-color: #688ef3;
+  color: white;
+}
+
+.skills-tab {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.skills-tab.active {
+  display: block;
+}
+
+.skills-tab ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.skills-tab li {
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  color: #1e293b;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =============================== */
+/* Contact Section  */
+/* =============================== */
+
 .contact-section {
   padding: 5rem 2rem;
   background-color: #ffffff; /* clean white */
