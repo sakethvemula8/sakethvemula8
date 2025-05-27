@@ -304,7 +304,7 @@ nav {
 
 .skills-section {
   padding: 4rem 1rem;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
@@ -317,25 +317,42 @@ nav {
 }
 
 .tab-btn {
-  background-color: transparent;
-  border: 2px solid #688ef3;
-  color: #688ef3;
-  font-weight: 600;
-  padding: 0.5rem 1.5rem;
-  border-radius: 8px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  position: relative;
+  color: #1e293b;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.tab-btn.active,
 .tab-btn:hover {
-  background-color: #688ef3;
-  color: white;
+  color: #ef4444;
+}
+
+.tab-btn.active {
+  color: #ef4444;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  background-color: #ef4444;
+}
+
+.skills-content {
+  text-align: left;
+  padding: 0 1rem;
 }
 
 .skills-tab {
   display: none;
-  animation: fadeIn 0.4s ease-in-out;
 }
 
 .skills-tab.active {
@@ -343,19 +360,10 @@ nav {
 }
 
 .skills-tab ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.skills-tab li {
-  font-size: 1.1rem;
-  padding: 0.5rem 0;
+  list-style-type: disc;
+  padding-left: 1.25rem;
   color: #1e293b;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  line-height: 1.8;
 }
 
 
