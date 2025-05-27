@@ -343,7 +343,6 @@ nav {
   bottom: -5px;
   height: 2px;
   width: 100%;
-  transform: translateX(-50%);
   background-color: #ef4444;
 }
 
