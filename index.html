@@ -121,25 +121,55 @@
     <a class="tab-btn" data-tab="soft">Human Side</a>
   </div>
 
-  <div class="skills-content">
-    <div id="technical" class="skills-tab active">
-      <ul>
-        <li><strong>Data Tools:</strong> SQL, Python, dbt, Airflow</li>
-        <li><strong>Analytics:</strong> Power BI, Tableau, Snowflake</li>
-        <li><strong>DevOps:</strong> Docker, Git, AWS, Azure</li>
-        <li><strong>Office Tools:</strong> Excel (VLOOKUP, Pivot Tables), JIRA</li>
-      </ul>
+  <section class="skills-section-toggle">
+  <div class="skills-toggle-header">
+    <button class="skills-toggle-btn active" data-skill="technical">Technical</button>
+    <button class="skills-toggle-btn" data-skill="soft">Soft Skills</button>
+  </div>
+
+  <div class="skills-toggle-content">
+    <!-- Technical Skills Grid -->
+    <div id="technical" class="skills-grid active">
+      <div class="skill-category">
+        <h3>Data Tools</h3>
+        <p>SQL, Python, dbt, Airflow</p>
+      </div>
+      <div class="skill-category">
+        <h3>Analytics</h3>
+        <p>Power BI, Tableau, Snowflake</p>
+      </div>
+      <div class="skill-category">
+        <h3>DevOps</h3>
+        <p>Docker, Git, AWS, Azure</p>
+      </div>
+      <div class="skill-category">
+        <h3>Office Tools</h3>
+        <p>Excel (VLOOKUP, Pivot Tables), JIRA</p>
+      </div>
     </div>
 
-    <div id="soft" class="skills-tab">
-      <ul>
-        <li><strong>Communication:</strong> Clear, concise, collaborative</li>
-        <li><strong>Problem Solving:</strong> Curious and analytical thinker</li>
-        <li><strong>Time Management:</strong> Reliable and organized</li>
-        <li><strong>Adaptability:</strong> Quick learner, thrives in ambiguity</li>
-      </ul>
+    <!-- Soft Skills Grid -->
+    <div id="soft" class="skills-grid">
+      <div class="skill-category">
+        <h3>Communication</h3>
+        <p>Clear writing, structured thinking, storytelling with data</p>
+      </div>
+      <div class="skill-category">
+        <h3>Collaboration</h3>
+        <p>Cross-functional teamwork, curious learner, adaptive mindset</p>
+      </div>
+      <div class="skill-category">
+        <h3>Time & Focus</h3>
+        <p>Deadline-oriented, detail-attentive, manages ambiguity well</p>
+      </div>
+      <div class="skill-category">
+        <h3>Feedback & Growth</h3>
+        <p>Receptive to feedback, self-starter, always iterating</p>
+      </div>
     </div>
   </div>
+</section>
+
 </section>
 
 
