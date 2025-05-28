@@ -115,61 +115,39 @@
   </div>
 </section>
 
-  <section class="skills-section">
+ <section class="skills-section">
   <div class="skills-tabs">
-    <a class="tab-btn active" data-tab="technical">Proficiencies</a>
-    <a class="tab-btn" data-tab="soft">Human Side</a>
+    <button class="tab-btn active" data-tab="technical">Skills</button>
+    <button class="tab-btn" data-tab="soft">Me</button>
   </div>
 
-  <section class="skills-section-toggle">
-  <div class="skills-toggle-header">
-    <button class="skills-toggle-btn active" data-skill="technical">Technical</button>
-    <button class="skills-toggle-btn" data-skill="soft">Soft Skills</button>
-  </div>
-
-  <div class="skills-toggle-content">
-    <!-- Technical Skills Grid -->
-    <div id="technical" class="skills-grid active">
-      <div class="skill-category">
+  <div id="technical" class="skills-tab active">
+    <div class="skills-grid">
+      <div class="skills-category">
         <h3>Data Tools</h3>
         <p>SQL, Python, dbt, Airflow</p>
       </div>
-      <div class="skill-category">
+      <div class="skills-category">
         <h3>Analytics</h3>
         <p>Power BI, Tableau, Snowflake</p>
       </div>
-      <div class="skill-category">
-        <h3>DevOps</h3>
-        <p>Docker, Git, AWS, Azure</p>
-      </div>
-      <div class="skill-category">
-        <h3>Office Tools</h3>
-        <p>Excel (VLOOKUP, Pivot Tables), JIRA</p>
-      </div>
-    </div>
-
-    <!-- Soft Skills Grid -->
-    <div id="soft" class="skills-grid">
-      <div class="skill-category">
-        <h3>Communication</h3>
-        <p>Clear writing, structured thinking, storytelling with data</p>
-      </div>
-      <div class="skill-category">
-        <h3>Collaboration</h3>
-        <p>Cross-functional teamwork, curious learner, adaptive mindset</p>
-      </div>
-      <div class="skill-category">
-        <h3>Time & Focus</h3>
-        <p>Deadline-oriented, detail-attentive, manages ambiguity well</p>
-      </div>
-      <div class="skill-category">
-        <h3>Feedback & Growth</h3>
-        <p>Receptive to feedback, self-starter, always iterating</p>
-      </div>
+      <!-- More -->
     </div>
   </div>
-</section>
 
+  <div id="soft" class="skills-tab">
+    <div class="skills-grid">
+      <div class="skills-category">
+        <h3>Communication</h3>
+        <p>Clear writing, structured thinking, data storytelling</p>
+      </div>
+      <div class="skills-category">
+        <h3>Collaboration</h3>
+        <p>Cross-functional teamwork, curiosity, adaptability</p>
+      </div>
+      <!-- More -->
+    </div>
+  </div>
 </section>
 
 
