@@ -378,8 +378,8 @@ nav {
 /* Card style for each skill category */
 .skills-category {
   background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
   padding: 2rem 1.5rem;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
@@ -391,7 +391,7 @@ nav {
 
 .skills-category h3 {
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #3b82f6; /* Modern blue like your blog section */
   margin-bottom: 0.75rem;
   line-height: 1.4;
