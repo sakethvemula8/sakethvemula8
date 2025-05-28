@@ -347,15 +347,6 @@ nav {
 }
 
 /* Grid layout like your reference image */
-.skills-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: left;
-}
-
 .skills-tab {
   display: none;
   opacity: 0;
@@ -367,27 +358,29 @@ nav {
   opacity: 1;
 }
 
-.skills-tab ul {
-  padding-left: 0;
-  list-style-type: none;
+/* The new grid layout per tab */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-.skills-tab li {
+/* Each box */
+.skills-category h3 {
   font-size: 1rem;
-  color: #334155;
-  line-height: 1.8;
+  font-weight: 600;
+  color: #0f172a;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.4rem;
 }
 
-/* Optional: adjust on small screens */
-@media (max-width: 768px) {
-  .tab-btn {
-    font-size: 1.2rem;
-  }
-
-  .skills-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+.skills-category p {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.6;
 }
 
 
