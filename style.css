@@ -299,7 +299,7 @@ nav {
 }
 
 /* =============================== */
-/* Contact Section  */
+/* Skills Section  */
 /* =============================== */
 
 .skills-section {
@@ -353,7 +353,7 @@ nav {
   background-color: #ef4444;
 }
 
-/* Grid layout like your reference image */
+/* Tab content animation */
 .skills-tab {
   display: none;
   opacity: 0;
@@ -365,7 +365,7 @@ nav {
   opacity: 1;
 }
 
-/* The new grid layout per tab */
+/* Grid layout */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -375,7 +375,20 @@ nav {
   text-align: left;
 }
 
-/* Each box */
+/* Card style for each skill category */
+.skills-category {
+  background-color: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
 .skills-category h3 {
   font-size: 1rem;
   font-weight: 600;
@@ -389,6 +402,7 @@ nav {
   color: #334155;
   line-height: 1.6;
 }
+
 
 
 /* =============================== */
