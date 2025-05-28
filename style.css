@@ -309,6 +309,13 @@ nav {
   text-align: center;
 }
 
+.section-subtitle {
+  font-size: 1rem;
+  color: #64748b; /* modern soft gray */
+  text-align: center;
+  margin-bottom: 3rem; /* controls the gap before skills start */
+}
+
 .skills-tabs {
   display: flex;
   justify-content: center;
