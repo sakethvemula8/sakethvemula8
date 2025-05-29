@@ -221,17 +221,15 @@ nav {
 /* Grid Container */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 0; /* Keep tiles flush like your reference */
   width: 100%;
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 1200px;
 }
 
 /* Grid Item */
 .portfolio-item {
-  width: 365px;
-  height: 250px;
   position: relative;
   display: block;
   overflow: hidden;
