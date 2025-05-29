@@ -180,33 +180,35 @@
   </div>
 
   <div id="soft" class="skills-tab">
-    <div class="skills-grid">
-      <div class="skills-category">
-        <h3>Communication</h3>
-        <p>Clear writing, structured thinking, data storytelling</p>
-      </div>
-      <div class="skills-category">
-        <h3>Collaboration</h3>
-        <p>Cross-functional teamwork, curiosity, adaptability</p>
-      </div>
-      <div class="skills-category">
-        <h3>Collaboration</h3>
-        <p>Cross-functional teamwork, curiosity, adaptability</p>
-      </div>
-      <div class="skills-category">
-        <h3>Collaboration</h3>
-        <p>Cross-functional teamwork, curiosity, adaptability</p>
-      </div>
-      <div class="skills-category">
-        <h3>Collaboration</h3>
-        <p>Cross-functional teamwork, curiosity, adaptability</p>
-      </div>
-      <div class="skills-category">
-        <h3>Collaboration</h3>
-        <p>Cross-functional teamwork, curiosity, adaptability</p>
-      </div>
-    </div>
+    <div class="slideshow-intro">
+    <h2>More Than Just Data</h2>
+    <p>Here’s a peek into the human side — leadership, teamwork, and the things that drive me.</p>
   </div>
+
+  <div class="slideshow-wrapper">
+    <button class="prev">&#10094;</button>
+
+    <div class="slideshow-slide">
+      <img src="images/lead1.jpg" alt="Leadership event" />
+      <h3>Leading from the Front</h3>
+      <p>Facilitated a workshop on data visualization at University of Cincinnati, engaging 40+ students hands-on.</p>
+    </div>
+
+    <div class="slideshow-slide">
+      <img src="images/award1.jpg" alt="Award moment" />
+      <h3>Recognized for Impact</h3>
+      <p>Awarded top intern at Wirtgen Group for driving actionable insights in supply chain reporting.</p>
+    </div>
+
+    <div class="slideshow-slide">
+      <img src="images/team1.jpg" alt="Team collaboration" />
+      <h3>Collaborative Spirit</h3>
+      <p>Worked cross-functionally on a dev sprint, optimizing our project pipeline and mentoring junior analysts.</p>
+    </div>
+
+    <button class="next">&#10095;</button>
+  </div>
+</div>
 </section>
 
 
@@ -254,6 +256,46 @@
     });
   });
 </script>
+
+  <!-- Slide show -->
+  <script>
+  const slides = document.querySelectorAll(".slideshow-slide");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? "block" : "none";
+    });
+  }
+
+  showSlide(currentSlide); // Initial
+
+  prevBtn.addEventListener("click", () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  // Swipe for mobile
+  let startX = 0;
+
+  document.querySelector(".slideshow-wrapper").addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  document.querySelector(".slideshow-wrapper").addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextBtn.click();
+    else if (endX - startX > 50) prevBtn.click();
+  });
+</script>
+
 
 
 </body>
