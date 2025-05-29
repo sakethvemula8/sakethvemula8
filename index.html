@@ -294,6 +294,59 @@
   });
 </script>
 
+<!-- HTML Structure -->
+<section class="hero" id="hero">
+  <!-- Hero content here -->
+</section>
+
+<section class="about" id="about">
+  <!-- About content -->
+</section>
+
+<section class="projects" id="projects">
+  <!-- Projects content -->
+</section>
+
+<!-- Include GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray("section").forEach((section, i) => {
+    if (section.id !== "hero") {
+      gsap.from(section, {
+        y: "100vh",
+        ease: "power3.out",
+        duration: 1,
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          toggleActions: "play none none none"
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  section {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .hero {
+    background: #f8fafc;
+  }
+  .about {
+    background: #fff5f5;
+  }
+  .projects {
+    background: #f0f9ff;
+  }
+</style>
 
 
 </body>
