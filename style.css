@@ -408,6 +408,7 @@ nav {
   text-align: center;
   margin-bottom: 2rem;
   color: #334155;
+  font-weight: 500;
 }
 
 .slideshow-wrapper {
@@ -433,12 +434,14 @@ nav {
 .slideshow-slide h3 {
   font-size: 1.2rem;
   color: #3b82f6;
+  font-weight: 500;
   margin: 0.5rem 0 0.2rem;
 }
 
 .slideshow-slide p {
   font-size: 0.95rem;
   color: #1e293b;
+  font-weight: 400;
   padding: 0 1rem;
 }
 
