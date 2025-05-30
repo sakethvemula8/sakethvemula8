@@ -711,7 +711,7 @@ body {
 }
 
 .project-image-apple {
-  max-width: 100%px;
+  max-width: 650px;
   height: auto;
   border-radius: 0.2rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
