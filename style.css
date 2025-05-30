@@ -710,6 +710,14 @@ body {
   color: #ef4444;
 }
 
+.project-image-apple {
+  max-width: 100%px;
+  height: auto;
+  border-radius: 0.2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  margin: 2rem 0;
+}
+
 
 
 
