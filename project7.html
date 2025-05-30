@@ -1,1 +1,106 @@
-hey
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apple Analytics</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html#portfolio">← Back to Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="project-detail">
+  <h1>Apple Analytics in Databricks</h1>
+    
+  <p class="overview">
+    As someone who’s worked with PySpark, Spark SQL, and Snowflake across production analytics pipelines, I wasn’t here to learn the 
+    syntax again. I'm not new to databricks, I have worked on it before but I keep going back, exploring tech I know and analyze anything 
+    and everything I find, I believe it sharpens my skills, keeps my analytical mind focused mainly, and I love it. This wasn’t about certifications or theory. 
+    It was about opening up a real Databricks workspace, running  a cluster, and pushing data through the pipeline with clean modular logic, just like I would in any 
+    live project.
+  </p>
+
+    <div class="project-try">
+    <p>The code and documentation are available on GitHub:  <a href="https://github.com/sakethvemula8/Apple-Analytics-using-Pyspark-and-SparkSQL" class="project-link" target="_blank">
+    Here.
+  </a></p>
+</div>
+    
+    <p>I structured the notebooks to follow a clean modular architecture—making it easier to manage extraction, transformation, and loading logic independently. 
+    This also allowed me to reuse components and test them individually within the Databricks workspace.</p>
+    <img src="images/databricks-workflow.png" alt="Databricks" class="project-image"/>
+
+<h2>PySpark + SparkSQL on Databricks</h2>
+  <p>To get started, I followed a practical walkthrough from <a href="https://www.youtube.com/watch?v=BlWS4foN9cY" class="project-link" target="_blank"> YouTube </a>  that demonstrated how to build a real-time analytics pipeline using Databricks
+    Notebooks and Apache Spark. The structure followed the Medallion Architecture, a robust layered approach to organizing data:</p>
+  <ul>
+    <li>Bronze Layer – Raw Ingestion: <br>
+        <li>Loaded structured CSV data into Databricks File System (DBFS)</li>
+        <li>Used Databricks’ UI to manage file storage and version control</li>
+    </li>
+    <li>Silver Layer – Transformation: <br>
+        <li>Cleaned and standardized data using PySpark</li>
+        <li>Wrote modular transformation logic with Spark SQL for readability and efficiency</li>
+    </li>
+    <li>Gold Layer – Analytics-Ready Tables
+        <li>Aggregated and filtered the transformed data</li>
+        <li>Prepared the final outputs for visualization and dashboarding</li>
+    </li>
+  </ul>
+
+    <p>My workflow class clearly breaks down the ETL pipeline into three modular steps: extracting the data, transforming it using PySpark, and loading it 
+      into a Delta table. This readability makes it easy to debug and extend in collaborative environments.</p>
+    <img src="images/apple-pipeline.png" alt="Apple Pipeline" class="project-image"/>
+    
+
+  <h2>How I Set It Up: Step-by-Step</h2>
+  <ul>
+    <li>Initialized the Workspace: I started by creating a new Databricks workspace and configuring a compute cluster to run the notebooks. 
+      I then set up DBFS (Databricks File System) paths to organize the data flow.</li>
+    <li>Extracted the Data: Using <code>spark.read.csv()</code>, I loaded the raw transactional data into a PySpark DataFrame. To make exploration easier, 
+      I registered the DataFrame as a temporary SQL view for quick access via SparkSQL.</li>
+    <li>Transformed with PySpark & SparkSQL: I cleaned the data by filtering out nulls, standardizing date formats, and performing joins where necessary. 
+      I also applied custom business logic to enrich the dataset and prepare it for meaningful analysis.</li>
+    <li>Loaded Processed Data: Once the transformations were complete, I wrote the results into Delta Tables for versioned, high-performance storage. 
+      I also set up final reporting views, making the data ready for downstream analytics or dashboarding.</li>
+  </ul>
+    <p>This project follows a modular and layered structure. At a high level, it’s split into: Airflow DAGs, dbt Models, Docker Compose.</p>
+     <img src="images/first-a-work.png" alt="First Apple Workflow" class="project-image"/>
+    <p>Using separate classes for different workflow logic allowed me to customize data transformation paths based on business rules. This flexibility makes it easier 
+      to adapt the pipeline to new scenarios without altering the core structure.</p>
+     <img src="images/second-a-work.png" alt="Second Apple Workflow" class="project-image"/>
+    <p>The final joined dataset includes enriched customer information and product history. Seeing this come together through clean PySpark transformations and 
+      joins was a rewarding part of the process.</p>
+    <img src="images/final-a-output.png" alt="Final Apple Output" class="project-image"/>
+    
+  
+    <h2>How Databricks Fits into a Data Analyst’s Workflow</h2>
+  <p>While Databricks is often seen as a tool for engineers, it’s incredibly useful for data analysts looking to go beyond dashboards and dive deeper 
+    into the data. What stood out to me was the seamless blend of SQL and Python in one environment, ideal for starting with quick queries and moving into 
+    complex transformations without context switching. The layered data architecture (Bronze, Silver, Gold) provided full visibility into how data evolves, 
+    not just the end result. Add in collaborative notebooks, scalable compute, and built-in visualizations, and Databricks becomes the perfect bridge between 
+    traditional analysis and modern data engineering.
+
+    
+<h2>Why You Should Try Databricks</h2>
+  <p>
+    If you're already comfortable with tools like PySpark or SQL and want to take your data workflow skills further, Databricks is a natural next step. 
+    This project was less about learning something new and more about reinforcing core skills in a platform that mirrors real-world production environments.
+
+    My advice is to start small and get hands-on. Set up a Databricks workspace, choose a dataset you're curious about, and build something end-to-end. 
+    Focus on structuring your pipeline cleanly, using modular notebooks, and applying both SQL and Python where they make the most sense.
+
+    Even a simple project can teach you a lot when you approach it with a real-world mindset. Pay attention to data quality, transformation logic, and 
+    how your code would scale. Databricks makes this process intuitive while giving you the power to grow into more complex workflows.
+  </p>
+
+</section>
+  
+</body>
+</html>
