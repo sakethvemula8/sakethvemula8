@@ -1,1 +1,88 @@
-hey
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Matcher</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html#portfolio">← Back to Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="project-detail">
+  <h1>Building an AI Resume Matcher</h1>
+    
+  <p class="overview">
+    Everyone builds a resume matcher at some point. But I didn’t want to just follow a tutorial, I wanted to create my own version, 
+    one that explored something deeper. I was curious about how AI agents could make the process more interactive and useful. Not just 
+    matching keywords, but actually helping users understand and improve their resumes. The idea came from a familiar frustration. Job seekers 
+    spend hours refining their resumes, while automated systems often reduce everything to a keyword scan. I wanted to bridge that gap and make 
+    the process feel more transparent and human. So I used Streamlit to quickly bring together parsing, scoring, and AI feedback into a single 
+    tool, something simple, but smart enough to think with the user.
+  </p>
+
+    <div class="project-try">
+    <p>The code and documentation are available on GitHub:  <a href="https://github.com/sakethvemula8/Apple-Analytics-using-Pyspark-and-SparkSQL" class="project-link" target="_blank">
+    Here.
+  </a></p>
+</div>
+    
+
+<h2>Problem Statement</h2>
+  <p>Contemporary Applicant Tracking Systems (ATS) use algorithmic logic — often variations of TF-IDF or semantic embeddings — to evaluate 
+    resumes against job descriptions. Yet, these systems are opaque. Candidates receive little feedback beyond rejection or silence, and many 
+    lack the technical expertise to meaningfully interpret why a resume may have been filtered out.</p>
+  <ul>
+    <p>This project, therefore, asks:</p>
+    <li>Can we surface the same computational logic used by ATS systems in a way that is both intelligible and actionable?</li>
+    <li>Can we augment this logic with large language models to deliver contextual rather than purely syntactic guidance?</li>
+    <li>And can we do so through a deployable, lightweight tool that respects user agency and minimizes cognitive overload?</li>
+  </ul>
+    
+
+  <h2>System Overview</h2>
+  <ul>
+    The application, a resume matcher and optimizer, performs structured analysis of a user’s resume and a job description. It operates in two stages:
+    <li>Similarity Analysis (Computational IR/NLP): <br>
+      The tool extracts text from a resume (PDF) and job description (TXT) and computes a match score using TF-IDF vectorization and cosine similarity. 
+      The rationale for using TF-IDF, despite its simplicity, lies in its interpretability. Unlike deep embeddings, TF-IDF offers an immediate, 
+      inspectable weight schema for each term, allowing users to trace relevance back to specific vocabulary.</li>
+    <li>Feedback Generation (LLM-based Augmentation): <br>
+      The second stage leverages the OpenAI GPT API to contextualize results. Based on the comparative keyword analysis, the model suggests how the resume 
+      might be improved, not only by listing missing terms but by proposing revised bullet points, formatting changes, or domain-specific phrasing.</li>
+    
+  
+    <h2>Implementation Details</h2>
+  <ul>
+    <li>Parsing and Extraction: PyMuPDF for robust PDF text parsing; spaCy for tokenization and preprocessing.</li>
+    <li>Feature Engineering: Scikit-learn’s <code>TfidfVectorizer</code> on both documents; cosine similarity for scoring.</li>
+    <li>Keyword Analysis: Set comparison to identify overlapping and missing domain-specific terms.</li>
+    <li>Language Model Integration: Prompt engineering techniques for GPT-4 to deliver targeted, grounded suggestions.</li>
+    <li>Deployment Interface: Streamlit, chosen for its rapid prototyping capabilities and ability to maintain stateful, reactive UI 
+      components without JavaScript overhead.</li></ul>
+
+    
+<h2>Why Streamlit and Not Flask/FastAPI?</h2>
+  <p>
+    While more traditional web frameworks offer architectural control, they often require significant time to develop full UI layers. 
+    Streamlit’s declarative structure allowed me to focus on experimentation and feedback loops rather than boilerplate code. Moreover, 
+    its support for component-based layouts and file upload handling made it suitable for a tool aimed at non-technical users.
+  </p>
+    
+  <h2>Reflections and Next Steps</h2>
+    <p>This project isn’t meant to replace ATS systems. Instead, it serves as a lens, a way to interpret, question, and improve how we interact with 
+    hiring automation. Technically, there’s room to grow. Future iterations could move beyond TF-IDF by using sentence-level embeddings for deeper 
+    semantic matching. Grouping keywords into skill domains and supporting multilingual inputs are also in the pipeline. User feedback will play a key role. 
+    With consent, anonymized data could help measure which suggestions actually improve outcomes. At its core, the project aims to reframe how we use AI in hiring, 
+    not to obscure decisions, but to explain them, make them fairer, and help candidates see where they stand.</p>
+
+</section>
+  
+</body>
+</html>
