@@ -38,8 +38,8 @@
   <p>Contemporary Applicant Tracking Systems (ATS) use algorithmic logic — often variations of TF-IDF or semantic embeddings — to evaluate 
     resumes against job descriptions. Yet, these systems are opaque. Candidates receive little feedback beyond rejection or silence, and many 
     lack the technical expertise to meaningfully interpret why a resume may have been filtered out.</p>
-  <ul>
     <p>This project, therefore, asks:</p>
+  <ul>
     <li>Can we surface the same computational logic used by ATS systems in a way that is both intelligible and actionable?</li>
     <li>Can we augment this logic with large language models to deliver contextual rather than purely syntactic guidance?</li>
     <li>And can we do so through a deployable, lightweight tool that respects user agency and minimizes cognitive overload?</li>
@@ -47,8 +47,8 @@
     
 
   <h2>System Overview</h2>
+  <p> The application, a resume matcher and optimizer, performs structured analysis of a user’s resume and a job description. It operates in two stages:</p>
   <ul>
-    The application, a resume matcher and optimizer, performs structured analysis of a user’s resume and a job description. It operates in two stages:
     <li>Similarity Analysis (Computational IR/NLP): <br>
       The tool extracts text from a resume (PDF) and job description (TXT) and computes a match score using TF-IDF vectorization and cosine similarity. 
       The rationale for using TF-IDF, despite its simplicity, lies in its interpretability. Unlike deep embeddings, TF-IDF offers an immediate, 
@@ -56,6 +56,7 @@
     <li>Feedback Generation (LLM-based Augmentation): <br>
       The second stage leverages the OpenAI GPT API to contextualize results. Based on the comparative keyword analysis, the model suggests how the resume 
       might be improved, not only by listing missing terms but by proposing revised bullet points, formatting changes, or domain-specific phrasing.</li>
+  </ul>
     
   
     <h2>Implementation Details</h2>
