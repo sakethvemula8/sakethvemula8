@@ -300,7 +300,7 @@ nav {
 }
 
 .portfolio-nav {
-  background-color: #e49387; /* Soft red tone */
+  background-color: #688ef3; /* Soft red tone */
   padding: 2rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -324,7 +324,7 @@ nav {
 .portfolio-prev,
 .portfolio-next {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 500;
   color: white;
   text-decoration: none;
   transition: 0.3s;
