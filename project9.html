@@ -1,1 +1,163 @@
-Coming soon
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SQL Challenge</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html#portfolio">← Back to Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="project-detail">
+  <h1>SQL Challenge: Data Analysis</h1>
+  <h3>A real-world case study from a Library Management System</h3>
+
+
+    <div class="project-try">
+    <p>The code and documentation are available on GitHub:  <a href="https://github.com/sakethvemula8/Apple-Analytics-using-Pyspark-and-SparkSQL" class="project-link" target="_blank">
+    Here.
+  </a></p>
+</div>
+    
+
+<h2>Why Only SQL</h2>
+  <p>In a world of Pandas, Power BI, and Tableau, it’s easy to forget that SQL alone is incredibly powerful. 
+    When you're working, people often say they work with SQL, but what does that mean? Is SQL alone enough to do basically everything an Analyst needs?</p>
+    <p><bold>Can I extract all the insights I need from a database using just SQL?</bold></p>
+    <p>Spoiler: You can.</p>
+    
+  <h2>Create the Right Schema for Analysis</h2>
+  <p> Start with a clean, normalized schema.</p>
+  <p><code>CREATE TABLE books (
+    isbn VARCHAR(17) PRIMARY KEY,
+    book_title VARCHAR(65),
+    category VARCHAR(20),
+    rental_price FLOAT,
+    status VARCHAR(10),
+    author VARCHAR(50),
+    publisher VARCHAR(50)
+);
+
+CREATE TABLE issued_status (
+    issued_id VARCHAR(20) PRIMARY KEY,
+    issued_member_id VARCHAR(20),  
+    issued_book_name VARCHAR(80),
+    issued_date DATE,
+    issued_book_isbn VARCHAR(75), 
+    issued_emp_id VARCHAR(20)
+);
+  </code></p>
+  <p>This structure helps us link books to who issued them, when, and how often.</p>
+    
+  
+    <h2>Analyze Which Books Are Issued the Most</h2>
+  <p>To understand demand patterns:</p>
+  <p><code>SELECT 
+    b.book_title,
+    COUNT(i.issued_id) AS total_issues
+FROM books b
+JOIN issued_status i ON b.isbn = i.issued_book_isbn
+GROUP BY b.book_title
+ORDER BY total_issues DESC
+LIMIT 10;
+  </code></p>
+  <p>Insight: Shows top 10 most borrowed books.</p>
+
+    <h2>Find Total Rental Revenue by Book Category</h2>
+  <p>Estimate potential revenue from each genre:</p>
+  <p><code>SELECT 
+    b.category,
+    COUNT(i.issued_id) AS times_issued,
+    SUM(b.rental_price) AS estimated_revenue
+FROM books b
+JOIN issued_status i ON b.isbn = i.issued_book_isbn
+GROUP BY b.category
+ORDER BY estimated_revenue DESC;
+  </code></p>
+  <p>Insight: Tells you which genres are profitable.</p>
+
+    <h2>Find Members With High Activity</h2>
+  <p>Who are your most active library users?</p>
+  <p><code>
+    SELECT 
+    issued_member_id,
+    COUNT(*) AS books_issued
+FROM issued_status
+GROUP BY issued_member_id
+HAVING COUNT(*) > 1;
+  </code></p>
+  <p>Insight: Target these members for loyalty programs or premium memberships.</p>
+
+    <h2>Track Recent User Growth</h2>
+  <p>Want to know if your library is growing?</p>
+  <p><code>
+    SELECT *
+FROM members
+WHERE reg_date >= CURRENT_DATE - INTERVAL '180 days';
+  </code></p>
+  <p>Insight: Track user acquisition over time.</p>
+
+    <h2>Detect Books Not Returned Yet</h2>
+  <p>Identify overdue or missing returns:</p>
+  <p><code>
+    SELECT i.issued_id, i.issued_book_name, i.issued_member_id
+FROM issued_status i
+LEFT JOIN return_status r ON i.issued_id = r.issued_id
+WHERE r.return_id IS NULL;
+  </code></p>
+  <p>Insight: Operational alert, follow up on these books.</p>
+
+    <h2>Detect Books Not Returned Yet</h2>
+  <p>Identify overdue or missing returns:</p>
+  <p><code>
+    SELECT i.issued_id, i.issued_book_name, i.issued_member_id
+FROM issued_status i
+LEFT JOIN return_status r ON i.issued_id = r.issued_id
+WHERE r.return_id IS NULL;
+  </code></p>
+  <p>Insight: Operational alert, follow up on these books.</p>
+
+    <h2>Detect Books Not Returned Yet</h2>
+  <p>Identify overdue or missing returns:</p>
+  <p><code>
+    CREATE TABLE book_issued_cnt AS
+SELECT b.isbn, b.book_title, COUNT(i.issued_id) AS issue_count
+FROM books b
+JOIN issued_status i ON b.isbn = i.issued_book_isbn
+GROUP BY b.isbn, b.book_title;
+  </code></p>
+  <p>Now you have a ready-to-use table for dashboards or BI tools.</p>
+    
+  <h2>Finally,</h2>
+    <p>SQL is more than just a database language, it's a full-fledged analysis tool.</p>
+    <p>No spreadsheets <br>
+       No Python <br>
+      No BI tool </p>
+    <p>Just raw SQL power.</p>
+
+  </section>
+
+  
+  <footer>
+    <div class="portfolio-nav">
+  <div class="portfolio-nav-content">
+
+    <div class="portfolio-next-wrapper">
+      <p class="next-label">Next Project</p>
+      <a href="project8.html" class="portfolio-next">Resume Matcher AI →</a>
+    </div>
+
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+  </div>
+</div>
+</footer>
+  
+</body>
+</html>
