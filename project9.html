@@ -35,23 +35,23 @@
     
   <h2>Create the Right Schema for Analysis</h2>
   <p> Start with a clean, normalized schema.</p>
-  <p><code>CREATE TABLE books (
-    isbn VARCHAR(17) PRIMARY KEY,
-    book_title VARCHAR(65),
-    category VARCHAR(20),
-    rental_price FLOAT,
-    status VARCHAR(10),
-    author VARCHAR(50),
-    publisher VARCHAR(50)
-);
+  <p><code>CREATE TABLE books ( <br>
+    isbn VARCHAR(17) PRIMARY KEY, <br>
+    book_title VARCHAR(65), <br>
+    category VARCHAR(20), <br>
+    rental_price FLOAT, <br>
+    status VARCHAR(10), <br>
+    author VARCHAR(50), <br>
+    publisher VARCHAR(50) <br>
+); <br>
 
-CREATE TABLE issued_status (
-    issued_id VARCHAR(20) PRIMARY KEY,
-    issued_member_id VARCHAR(20),  
-    issued_book_name VARCHAR(80),
-    issued_date DATE,
-    issued_book_isbn VARCHAR(75), 
-    issued_emp_id VARCHAR(20)
+CREATE TABLE issued_status ( <br>
+    issued_id VARCHAR(20) PRIMARY KEY, <br>
+    issued_member_id VARCHAR(20),  <br>
+    issued_book_name VARCHAR(80), <br>
+    issued_date DATE,<br>
+    issued_book_isbn VARCHAR(75), <br>
+    issued_emp_id VARCHAR(20)<br>
 );
   </code></p>
   <p>This structure helps us link books to who issued them, when, and how often.</p>
@@ -59,78 +59,68 @@ CREATE TABLE issued_status (
   
     <h2>Analyze Which Books Are Issued the Most</h2>
   <p>To understand demand patterns:</p>
-  <p><code>SELECT 
-    b.book_title,
-    COUNT(i.issued_id) AS total_issues
-FROM books b
-JOIN issued_status i ON b.isbn = i.issued_book_isbn
-GROUP BY b.book_title
-ORDER BY total_issues DESC
+  <p><code style= color: #171717>SELECT <br>
+    b.book_title,<br>
+    COUNT(i.issued_id) AS total_issues<br>
+FROM books b<br>
+JOIN issued_status i ON b.isbn = i.issued_book_isbn<br>
+GROUP BY b.book_title<br>
+ORDER BY total_issues DESC<br>
 LIMIT 10;
   </code></p>
   <p>Insight: Shows top 10 most borrowed books.</p>
 
     <h2>Find Total Rental Revenue by Book Category</h2>
   <p>Estimate potential revenue from each genre:</p>
-  <p><code>SELECT 
-    b.category,
-    COUNT(i.issued_id) AS times_issued,
-    SUM(b.rental_price) AS estimated_revenue
-FROM books b
-JOIN issued_status i ON b.isbn = i.issued_book_isbn
-GROUP BY b.category
+  <p><code style= color: #171717>SELECT <br>
+    b.category,<br>
+    COUNT(i.issued_id) AS times_issued,<br>
+    SUM(b.rental_price) AS estimated_revenue<br>
+FROM books b<br>
+JOIN issued_status i ON b.isbn = i.issued_book_isbn<br>
+GROUP BY b.category<br>
 ORDER BY estimated_revenue DESC;
   </code></p>
   <p>Insight: Tells you which genres are profitable.</p>
 
     <h2>Find Members With High Activity</h2>
   <p>Who are your most active library users?</p>
-  <p><code>
-    SELECT 
-    issued_member_id,
-    COUNT(*) AS books_issued
-FROM issued_status
-GROUP BY issued_member_id
+  <p><code style= color: #171717>
+    SELECT <br>
+    issued_member_id,<br>
+    COUNT(*) AS books_issued<br>
+FROM issued_status<br>
+GROUP BY issued_member_id<br>
 HAVING COUNT(*) > 1;
   </code></p>
   <p>Insight: Target these members for loyalty programs or premium memberships.</p>
 
     <h2>Track Recent User Growth</h2>
   <p>Want to know if your library is growing?</p>
-  <p><code>
-    SELECT *
-FROM members
+  <p><code style= color: #171717>
+    SELECT *<br>
+FROM members<br>
 WHERE reg_date >= CURRENT_DATE - INTERVAL '180 days';
   </code></p>
   <p>Insight: Track user acquisition over time.</p>
 
     <h2>Detect Books Not Returned Yet</h2>
   <p>Identify overdue or missing returns:</p>
-  <p><code>
-    SELECT i.issued_id, i.issued_book_name, i.issued_member_id
-FROM issued_status i
-LEFT JOIN return_status r ON i.issued_id = r.issued_id
+  <p><code style= color: #171717>
+    SELECT i.issued_id, i.issued_book_name, i.issued_member_id<br>
+FROM issued_status i<br>
+LEFT JOIN return_status r ON i.issued_id = r.issued_id<br>
 WHERE r.return_id IS NULL;
   </code></p>
   <p>Insight: Operational alert, follow up on these books.</p>
 
-    <h2>Detect Books Not Returned Yet</h2>
-  <p>Identify overdue or missing returns:</p>
-  <p><code>
-    SELECT i.issued_id, i.issued_book_name, i.issued_member_id
-FROM issued_status i
-LEFT JOIN return_status r ON i.issued_id = r.issued_id
-WHERE r.return_id IS NULL;
-  </code></p>
-  <p>Insight: Operational alert, follow up on these books.</p>
 
-    <h2>Detect Books Not Returned Yet</h2>
-  <p>Identify overdue or missing returns:</p>
-  <p><code>
-    CREATE TABLE book_issued_cnt AS
-SELECT b.isbn, b.book_title, COUNT(i.issued_id) AS issue_count
-FROM books b
-JOIN issued_status i ON b.isbn = i.issued_book_isbn
+    <h2>Create a Summary Table for Quick Reports (CTAS)</h2>
+  <p><code style= color: #171717>
+    CREATE TABLE book_issued_cnt AS <br>
+SELECT b.isbn, b.book_title, COUNT(i.issued_id) AS issue_count<br>
+FROM books b<br>
+JOIN issued_status i ON b.isbn = i.issued_book_isbn<br>
 GROUP BY b.isbn, b.book_title;
   </code></p>
   <p>Now you have a ready-to-use table for dashboards or BI tools.</p>
