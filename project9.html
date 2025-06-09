@@ -60,7 +60,7 @@ CREATE TABLE issued_status ( <br>
   
     <h2>Analyze Which Books Are Issued the Most</h2>
   <p>To understand demand patterns:</p>
-  <p><code style= color: #171717>SELECT <br>
+  <p><code>SELECT <br>
     b.book_title,<br>
     COUNT(i.issued_id) AS total_issues<br>
 FROM books b<br>
@@ -73,7 +73,7 @@ LIMIT 10;
 
     <h2>Find Total Rental Revenue by Book Category</h2>
   <p>Estimate potential revenue from each genre:</p>
-  <p><code style= color: #171717>SELECT <br>
+  <p><code>SELECT <br>
     b.category,<br>
     COUNT(i.issued_id) AS times_issued,<br>
     SUM(b.rental_price) AS estimated_revenue<br>
@@ -86,7 +86,7 @@ ORDER BY estimated_revenue DESC;
 
     <h2>Find Members With High Activity</h2>
   <p>Who are your most active library users?</p>
-  <p><code style= color: #171717>
+  <p><code>
     SELECT <br>
     issued_member_id,<br>
     COUNT(*) AS books_issued<br>
@@ -98,7 +98,7 @@ HAVING COUNT(*) > 1;
 
     <h2>Track Recent User Growth</h2>
   <p>Want to know if your library is growing?</p>
-  <p><code style= color: #171717>
+  <p><code>
     SELECT *<br>
 FROM members<br>
 WHERE reg_date >= CURRENT_DATE - INTERVAL '180 days';
@@ -107,7 +107,7 @@ WHERE reg_date >= CURRENT_DATE - INTERVAL '180 days';
 
     <h2>Detect Books Not Returned Yet</h2>
   <p>Identify overdue or missing returns:</p>
-  <p><code style= color: #171717>
+  <p><code>
     SELECT i.issued_id, i.issued_book_name, i.issued_member_id<br>
 FROM issued_status i<br>
 LEFT JOIN return_status r ON i.issued_id = r.issued_id<br>
@@ -117,7 +117,7 @@ WHERE r.return_id IS NULL;
 
 
     <h2>Create a Summary Table for Quick Reports (CTAS)</h2>
-  <p><code style= color: #171717>
+  <p><code>
     CREATE TABLE book_issued_cnt AS <br>
 SELECT b.isbn, b.book_title, COUNT(i.issued_id) AS issue_count<br>
 FROM books b<br>
